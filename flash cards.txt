@@ -1,0 +1,28 @@
+Flash Card Web App
+
+Versions
+1 Flash card analog
+2 Scoring
+3 Trending
+
+Actors
+- admin
+- parent
+
+Admin
+- CRUD
+	- *
+- Accounts
+	- Registration
+	- Lost / Change Password
+	- Authentication / Authorization
+	
+Parent
+- CRUD
+	- Cards
+	- Decks
+- Add cards to decks
+- Reorder Cards
+- Show / Play Cards (Order or Random)
+- Show Deck
+- Edit Profile

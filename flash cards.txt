@@ -8,6 +8,7 @@ Versions
 Actors
 - admin
 - parent
+- system
 
 Admin
 - CRUD
@@ -17,6 +18,10 @@ Admin
 	- Lost / Change Password
 	- Authentication / Authorization
 	
+System
+- send registration emails
+- send password reset emails / reset password on request
+
 Parent
 - CRUD
 	- Cards
@@ -26,3 +31,6 @@ Parent
 - Show / Play Cards (Order or Random)
 - Show Deck
 - Edit Profile
+
+Concerns 
+- Drag and Drop Reordering

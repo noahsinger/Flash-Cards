@@ -1,9 +1,13 @@
 Flashcards::Application.routes.draw do
-  get "sessions/new"
-
-  resources :users
-
+  resources :users 
+  
+  resources :sessions 
+  
+  match "logout" => "sessions#destroy", :via => :delete
+  
   get "home/index"
+  
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,2 +1,13 @@
 <h1>Home#index</h1>
+
+<%= notice %>
+
+<p>
+	<% if session[:user] %>
+		<%= link_to 'Logout', logout_path, :method => :delete %>
+	<% else %>
+		<%= link_to 'Login', new_session_path %>
+	<% end %>
+</p>
+
 <p>Find me in app/views/home/index.html.erb</p>

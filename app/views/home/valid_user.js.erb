@@ -1,0 +1,8 @@
+<% if @user %>
+	// alert( "valid_user.js.erb" );
+<% else %>
+	// alert( "invalid" );
+	<% @user = User.new %>
+	console.log( "user invalid" );
+	$("#something").replaceWith("<%= j( render( 'users/form' ) ) %>");
+<% end %>

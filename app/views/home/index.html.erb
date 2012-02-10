@@ -10,4 +10,14 @@
 	<% end %>
 </p>
 
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="something"></div>
+
+<%= form_for @user do |f| %>
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.submit 'Send Email', {id: 'action_button'} %>
+	</p>
+<% end %>

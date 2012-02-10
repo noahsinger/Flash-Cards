@@ -6,6 +6,7 @@ Flashcards::Application.routes.draw do
   match "logout" => "sessions#destroy", :via => :delete
   
   get "home/index"
+  get "home/valid_user"
   
   root :to => 'home#index'
 

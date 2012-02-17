@@ -1,8 +1,16 @@
 <% if @user %>
-	// alert( "valid_user.js.erb" );
+
+	console.log( "user valid" );
+	$("#additional_fields").html("<%= j( render( 'login' ) ) %>");
+	$("#action_button").val( "Login" );
+	$("#home_form").attr( "action", "<%= sessions_path %>" );
+	
 <% else %>
-	// alert( "invalid" );
+
 	<% @user = User.new %>
 	console.log( "user invalid" );
-	$("#something").replaceWith("<%= j( render( 'users/form' ) ) %>");
+	$("#additional_fields").html("<%= j( render( 'user_registration' ) ) %>");
+	$("#action_button").val( "Register" );
+	$("#home_form").attr( "action", "<%= registration_index_path %>" );
+
 <% end %>

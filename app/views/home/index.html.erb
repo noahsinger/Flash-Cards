@@ -10,14 +10,13 @@
 	<% end %>
 </p>
 
-<div id="something"></div>
-
-<%= form_for @user do |f| %>
+<%= form_tag :user, id: 'home_form' do %>
 	<p>
-		<%= f.label :email %>
-		<%= f.text_field :email %>
+		<%= label_tag :email %>
+		<%= text_field_tag :email %>
 	</p>
+	<div id="additional_fields"></div>
 	<p>
-		<%= f.submit 'Send Email', {id: 'action_button'} %>
+		<%= submit_tag 'Login / Register', {id: 'action_button'} %>
 	</p>
 <% end %>

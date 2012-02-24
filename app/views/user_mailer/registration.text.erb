@@ -1,5 +1,14 @@
 Confirm Registration 
 
-This email is being sent...
+This email is being sent to confirm your registration with our
+awesome flashcards website thingy.
 
-<%= @user.email %>
+The email address used to register is: <%= @user.email %>
+
+If you want to confirm this registration please copy and paste 
+the following link into your web browser.
+
+<%= confirmation_registration_index_url( id: @user.reg_hash ) %>
+
+Thank you,
+From the Awesome Flashcard Thingy

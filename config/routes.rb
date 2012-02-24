@@ -1,7 +1,11 @@
 Flashcards::Application.routes.draw do
   resources :users 
   resources :sessions 
-  resources :registration
+  resources :registration do
+    collection do
+      get :confirmation
+    end
+  end
   
   match "logout" => "sessions#destroy", :via => :delete
   

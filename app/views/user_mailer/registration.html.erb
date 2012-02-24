@@ -1,0 +1,23 @@
+<h1>Confirm Registration </h1>
+
+<p>
+This email is being sent to confirm your registration with our
+awesome flashcards website thingy.
+</p>
+
+<p>
+The email address used to register is: <%= @user.email %>
+</p>
+
+<p>
+If you want to confirm this registration please click the link below:
+</p>
+
+<p>
+	<%= link_to "Register ME!", confirmation_registration_index_url( id: @user.reg_hash ) %>
+</p>
+
+<p>
+Thank you,<br/>
+From the Awesome Flashcard Thingy
+</p>

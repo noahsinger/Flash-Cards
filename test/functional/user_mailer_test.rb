@@ -6,7 +6,7 @@ class UserMailerTest < ActionMailer::TestCase
     assert_equal "Registration Confirmation", mail.subject
     assert_equal [users(:one).email], mail.to
     # assert_equal ["from@example.com"], mail.from
-    # assert_match "Hi", mail.body.encoded
+    # assert_match "#{users(:one).reg_hash}", mail.body.encoded
   end
 
 end

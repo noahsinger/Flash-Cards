@@ -16,4 +16,25 @@ class RegistrationController < ApplicationController
       end
     end
   end
+  
+  def confirmation
+    @user = User.find_by_reg_hash(params[:id])
+    if @user
+      @user.update_attribute( :registered, true )
+      redirect_to new_session_path, notice: "You are now registered and can login"
+    else
+      redirect_to root_path, notice: "Invalid Registration Code"
+    end
+  end
 end
+
+
+
+
+
+
+
+
+
+
+

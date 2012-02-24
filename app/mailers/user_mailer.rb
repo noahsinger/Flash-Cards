@@ -8,6 +8,6 @@ class UserMailer < ActionMailer::Base
   #
   def registration( user )
     @user = user
-    mail to: @user.email
+    mail to: @user.email, subject: "Registration Confirmation"
   end
 end

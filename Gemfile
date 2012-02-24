@@ -22,7 +22,11 @@ end
 
 gem 'jquery-rails'
 
-gem "letter_opener", :group => :development
+group :development, :test do
+	gem "letter_opener"
+	gem "turn"
+	gem "minitest"
+end
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

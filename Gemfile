@@ -14,8 +14,29 @@ end
 group :development, :test do
 	gem "letter_opener"
 	gem "turn"
-	gem "minitest" # required by growl
+	gem "minitest"
 	
 	gem "guard-minitest", :git => "http://github.com/aspiers/guard-minitest.git"
 	gem "ruby-prof"  #for guard-minitest
+	
+	gem "awesome_print"
+	gem "hirb"
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

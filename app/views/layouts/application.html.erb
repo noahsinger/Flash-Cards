@@ -8,6 +8,14 @@
 </head>
 <body>
 
+	<p>
+		<% if current_user %>
+			<%= link_to 'Logout', logout_path, :method => :delete %>
+		<% else %>
+			<%= link_to 'Login', new_session_path %>
+		<% end %>
+	</p>
+
 <%= yield %>
 
 </body>

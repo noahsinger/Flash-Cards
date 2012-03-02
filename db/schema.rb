@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224001557) do
+ActiveRecord::Schema.define(:version => 20120302005440) do
+
+  create_table "cards", :force => true do |t|
+    t.integer  "deck_id"
+    t.string   "content"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "cards", ["deck_id"], :name => "index_cards_on_deck_id"
+
+  create_table "decks", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "decks", ["user_id"], :name => "index_decks_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -21,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120224001557) do
     t.datetime "updated_at",      :null => false
     t.string   "reg_hash"
     t.boolean  "registered"
+    t.datetime "emailed_at"
   end
 
 end

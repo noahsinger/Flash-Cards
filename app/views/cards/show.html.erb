@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @card.content %>
+</p>
+
+<%= link_to 'Edit', edit_deck_card_path(@deck,@card) %> |
+<%= link_to 'Back', deck_cards_path(@deck) %>

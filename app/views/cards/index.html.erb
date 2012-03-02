@@ -1,0 +1,24 @@
+<h1>Listing cards for deck <%= @deck.name %></h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cards.each do |card| %>
+  <tr>
+    <td><%= card.content %></td>
+    <td><%= link_to 'Show', [@deck,card] %></td>
+    <td><%= link_to 'Edit', edit_deck_card_path(@deck,card) %></td>
+    <td><%= link_to 'Destroy', [@deck,card], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to "Decks", decks_path %> | 
+<%= link_to 'New Card', new_deck_card_path(@deck) %>

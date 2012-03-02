@@ -19,7 +19,7 @@ class RegistrationControllerTest < ActionController::TestCase
   test "should register a user with a valid reg code" do
     get :confirmation, id: users(:one).reg_hash
     assert_equal true, assigns(:user).registered
-    assert_redirected_to new_session_path
+    assert_redirected_to decks_path
   end
   
   test "should not register a user with an invalid code" do

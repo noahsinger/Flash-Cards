@@ -1,4 +1,8 @@
 Flashcards::Application.routes.draw do
+  resources :decks do
+    resources :cards
+  end
+
   resources :users 
   resources :sessions 
   resources :registration do

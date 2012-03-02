@@ -8,7 +8,7 @@ class RegistrationController < ApplicationController
     respond_to do |format|
       if @user.save
       	UserMailer.registration( @user ).deliver
-        format.html { redirect_to root_url, notice: 'You have been registered.' }
+        format.html { redirect_to root_url, notice: 'Check your Email!  We just sent you a link to verify your email address.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -21,7 +21,8 @@ class RegistrationController < ApplicationController
     @user = User.find_by_reg_hash(params[:id])
     if @user
       @user.update_attribute( :registered, true )
-      redirect_to new_session_path, notice: "You are now registered and can login"
+      session[:user_id] = @user.id
+      redirect_to decks_path, notice: "You are now registered and logged in. Make cards and prosper!"
     else
       redirect_to root_path, notice: "Invalid Registration Code"
     end

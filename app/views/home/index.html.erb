@@ -2,14 +2,6 @@
 
 <%= notice %>
 
-<p>
-	<% if session[:user] %>
-		<%= link_to 'Logout', logout_path, :method => :delete %>
-	<% else %>
-		<%= link_to 'Login', new_session_path %>
-	<% end %>
-</p>
-
 <%= form_tag :user, id: 'home_form' do %>
 	<p>
 		<%= label_tag :email %>

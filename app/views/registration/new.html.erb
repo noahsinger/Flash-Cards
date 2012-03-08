@@ -1,9 +1,11 @@
 <h1>Register</h1>
 
+<p><%= alert %></p>
+
 <%= form_tag registration_index_path do %>
 	<p>
 		<%= label_tag :email %>
-		<%= text_field_tag :email %>
+		<%= text_field_tag :email, params[:email] %>
 	</p>
 	<p>
 		<%= label_tag :password %>

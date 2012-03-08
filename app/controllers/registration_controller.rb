@@ -3,7 +3,7 @@ class RegistrationController < ApplicationController
 	end
 
   def create
-    @user = User.new(email: params[:email], password: params[:password])
+    @user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
 
     respond_to do |format|
       if @user.save
@@ -11,6 +11,7 @@ class RegistrationController < ApplicationController
         format.html { redirect_to root_url, notice: 'Check your Email!  We just sent you a link to verify your email address.' }
         format.json { render json: @user, status: :created, location: @user }
       else
+        flash.now.alert = "Your password and confirmation did not match"
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

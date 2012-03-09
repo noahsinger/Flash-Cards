@@ -5,5 +5,9 @@
   <%= @card.content %>
 </p>
 
+<%= link_to_prev 'prev', @card %> | <%= link_to_next 'next', @card %>
+
+<br/>
+
 <%= link_to 'Edit', edit_deck_card_path(@deck,@card) %> |
 <%= link_to 'Back', deck_cards_path(@deck) %>

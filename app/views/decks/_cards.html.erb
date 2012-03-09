@@ -1,0 +1,17 @@
+<table>
+	<% @deck.cards.each do |card| %>
+		<tr>
+			<td><%= card.content %></td>
+			<td>
+				<% unless card.first? %>
+					<%= link_to 'Up', deck_card_move_up_path(@deck, card), :remote => true %>
+				<% end %>
+			</td>
+			<td>
+				<% unless card.last? %>
+					<%= link_to 'Down', deck_card_move_down_path(@deck,card), :remote => true %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

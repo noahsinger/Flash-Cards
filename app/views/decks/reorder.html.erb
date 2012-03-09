@@ -1,0 +1,9 @@
+<h1>Reorder</h1>
+
+<%= link_to 'Shuffle', deck_shuffle_path(@deck), :remote => true %>
+
+<div id="cards_table">
+	<%= render 'cards' %>
+</div>
+
+<%= link_to "Done", deck_cards_path(@deck) %>

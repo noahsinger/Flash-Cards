@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class DeckTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "decks have a shuffle method" do
+    assert_respond_to Deck.first, :shuffle
+  end
 end

@@ -32,6 +32,20 @@ class DecksController < ApplicationController
   def edit
     @deck = Deck.find(params[:id])
   end
+  
+  def reorder
+    @deck = Deck.find( params[:deck_id] )
+  end
+  
+  def shuffle
+    @deck = Deck.find( params[:deck_id] )
+    @deck.shuffle
+    
+    respond_to do |format|
+      format.html {render 'reorder'}
+      format.js #reorder.js.erb
+    end
+  end
 
   # POST /decks
   # POST /decks.json

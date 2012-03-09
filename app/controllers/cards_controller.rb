@@ -59,6 +59,26 @@ class CardsController < ApplicationController
       end
     end
   end
+  
+  def move_up
+    @card = @deck.cards.find(params[:card_id])
+    @card.move_higher
+    
+    respond_to do |format|
+      format.html {redirect_to deck_reorder_url(@deck)}
+      format.js
+    end
+  end
+  
+  def move_down
+    @card = @deck.cards.find(params[:card_id])
+    @card.move_lower
+    
+    respond_to do |format|
+      format.html {redirect_to deck_reorder_url(@deck)}
+      format.js
+    end
+  end
 
   # PUT /cards/1
   # PUT /cards/1.json

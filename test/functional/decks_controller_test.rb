@@ -22,6 +22,18 @@ class DecksControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
+  
+  test "should get reorder" do
+    get :reorder, deck_id: decks(:one).id
+    assert_response :success
+    
+    assert_not_nil assigns(:deck)
+  end
+  
+  test "should get shuffle" do
+    get :shuffle, deck_id: decks(:one).id
+    assert_not_nil assigns(:deck)
+  end
 
   test "should create deck" do
     session[:user_id] = users(:one).id

@@ -9,11 +9,19 @@ class RegistrationControllerTest < ActionController::TestCase
   test "should create/register user" do
     assert_difference('ActionMailer::Base.deliveries.size') do
       assert_difference('User.count') do
-        post :create, email: "user3@test.com", password: "secret"
+        post :create, email: "user3@test.com", password: "secret", password_confirmation: "secret"
       end
     end
 
     assert_redirected_to root_url
+  end
+  
+  test "should not create user without password confirmation" do
+    assert_no_difference('ActionMailer::Base.deliveries.size') do
+      assert_no_difference('User.count') do
+        post :create, email: "user3@test.com", password: "secret", password_confirmation: "wrong"
+      end
+    end
   end
   
   test "should register a user with a valid reg code" do

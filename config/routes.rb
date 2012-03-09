@@ -1,6 +1,12 @@
 Flashcards::Application.routes.draw do
   resources :decks do
-    resources :cards
+    resources :cards do
+      get "move_up"
+      get "move_down"
+    end
+    
+    get "reorder"
+    get "shuffle"
   end
 
   resources :users 

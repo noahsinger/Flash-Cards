@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Can I vertically Align Text?</title>
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="stylesheets/blokletters.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+	<style type="text/css" media="screen">
+		ol.decks, ol.cards {
+			list-style: none;
+		}
+	
+		ol.decks li .content, ol.cards li .content {
+			padding-top: 5px;
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+
+			width: 160px;
+			height: 160px;
+		}
+
+		ol.decks li, ol.cards li {
+			margin: 20px;
+			padding: 20px;
+			float: left;
+			width: 160px;
+			height: 160px;
+
+			border: 1px solid #000;
+
+			font-family: 'BloklettersPotlood';
+
+			font-size: 2em;
+
+			text-align: center;
+		}
+
+		ol.decks li {			  
+			box-shadow: 2px 2px 1px rgba(0,0,0,0.25), /* main shadow */ 
+				10px 10px 0 -5px #fff,                  /* 2nd card layer */ 
+				10px 10px 1px -4px rgba(0,0,0,0.35),    /* 2nd card shadow */ 
+				20px 20px 0 -10px #fff,                 /* 3rd card layer */ 
+				20px 20px 1px -9px rgba(0,0,0,0.35);    /* 3rd card shadow */ 
+		}
+
+
+		ol.cards li {
+			box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
+		}
+	</style>
+</head>
+<body>
+
+	<ol class="decks">
+		<li>
+			<div class="content">
+				Deck Name
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				Deck Name
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				Deck Name
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				Deck Name
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				Deck Name
+			</div>
+		</li>
+	</ol>
+
+
+
+	<ol class="cards">
+		<li>
+			<div class="content">
+				just
+			</div>
+		</li>
+		
+		<li>
+			<div class="content">
+				another
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				particular
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				set
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				of
+			</div>
+		</li>
+	
+		<li>
+			<div class="content">
+				cards
+			</div>
+		</li>
+	</ol>
+
+</body>
+</html>

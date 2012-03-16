@@ -53,7 +53,7 @@ class DecksControllerTest < ActionController::TestCase
   end
 
   test "should update deck" do
-    put :update, id: @deck, deck: @deck.attributes
+    put :update, id: @deck, deck: {name: 'updated name'}
     assert_redirected_to deck_cards_path(assigns(:deck))
   end
 

@@ -2,6 +2,8 @@ class Deck < ActiveRecord::Base
   belongs_to :user
   has_many :cards, :order => :position, :dependent => :destroy
   
+  attr_accessible :name
+  
   validate :name, :presence => true
   
   def shuffle

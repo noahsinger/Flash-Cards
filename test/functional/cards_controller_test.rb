@@ -3,6 +3,7 @@ require 'test_helper'
 class CardsControllerTest < ActionController::TestCase
   setup do
     @card = cards(:one)
+    login( users(:one) )
   end
 
   test "should get index" do
@@ -21,12 +22,18 @@ class CardsControllerTest < ActionController::TestCase
       post :create, card: @card.attributes, :deck_id => decks(:one)
     end
 
-    assert_redirected_to deck_card_path(assigns(:deck), assigns(:card))
+    assert_redirected_to new_deck_card_path(assigns(:deck))
   end
 
   test "should show card" do
     get :show, id: @card, :deck_id => decks(:one)
     assert_response :success
+  end
+  
+  test "should not show card if not logged in" do
+    logout
+    get :show, id: @card, :deck_id => decks(:one)
+    assert_redirected_to root_path
   end
 
   test "should get edit" do

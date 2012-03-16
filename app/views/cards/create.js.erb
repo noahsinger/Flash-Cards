@@ -1,0 +1,3 @@
+$("#notice").html( "The \"<%= @card.content %>\" card was added" );
+$("#card_content").val( "" );
+$("#new_cards").prepend( "<%= j render( @card ) %>" );

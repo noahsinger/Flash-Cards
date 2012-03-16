@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   
+  before_filter :authenticate
   before_filter :load_deck
   
   def load_deck
@@ -51,8 +52,9 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to [@deck,@card], notice: 'Card was successfully created.' }
+        format.html { redirect_to new_deck_card_url(@deck), notice: 'Card was successfully created.' }
         format.json { render json: @card, status: :created, location: @card }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @card.errors, status: :unprocessable_entity }

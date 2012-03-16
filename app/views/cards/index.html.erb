@@ -10,7 +10,7 @@
 
 <% @cards.each do |card| %>
   <tr>
-    <td><%= card.content %></td>
+    <td><%= render card %></td>
     <td><%= link_to 'Show', [@deck,card] %></td>
     <td><%= link_to 'Edit', edit_deck_card_path(@deck,card) %></td>
     <td><%= link_to 'Destroy', [@deck,card], confirm: 'Are you sure?', method: :delete %></td>

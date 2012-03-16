@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user
   
+  def authenticate
+    redirect_to( root_url, notice: "You must login first" ) unless current_user
+  end
+  
   private
   
   def current_user

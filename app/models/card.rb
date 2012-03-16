@@ -5,5 +5,5 @@ class Card < ActiveRecord::Base
   
   acts_as_list :scope => :deck
   
-  validate :content, :presence => true
+  validates :content, :presence => true, :uniqueness => true
 end

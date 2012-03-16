@@ -4,7 +4,7 @@ class Deck < ActiveRecord::Base
   
   attr_accessible :name
   
-  validate :name, :presence => true
+  validates :name, :presence => true
   
   def shuffle
     random_positions = (1..(self.cards.count)).to_a.shuffle

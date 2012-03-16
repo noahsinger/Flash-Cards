@@ -1,3 +1,7 @@
-$("#notice").html( "The \"<%= @card.content %>\" card was added" );
-$("#card_content").val( "" );
-$("#new_cards").prepend( "<%= j render( @card ) %>" );
+<% if @card.errors.any? %>
+	$("#notice").html( "<%= @card.errors.full_messages.join(', ') %>" );
+<% else %>
+	$("#notice").html( "The \"<%= @card.content %>\" card was added" );
+	$("#card_content").val( "" );
+	$("#new_cards").prepend( "<%= j render( @card ) %>" );
+<% end %>

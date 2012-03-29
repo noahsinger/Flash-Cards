@@ -3,13 +3,20 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:one)
-    login( users(:one) )
+    login( users(:admin) )
   end
 
   test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:users)
+  end
+  
+  test "index should only be accessible to admin users" do
+    logout( )
+    login( users(:one) )
+    get :index
+    assert_redirected_to root_path
   end
 
   test "should get new" do

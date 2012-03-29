@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate
+  before_filter :admin_only
+  
+  def admin_only
+    unless current_user.role == "admin"
+      redirect_to root_url, notice: "You are not authorized to access that"
+    end
+  end
   
   # GET /users
   # GET /users.json

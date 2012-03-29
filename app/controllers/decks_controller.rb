@@ -1,6 +1,16 @@
 class DecksController < ApplicationController
   
   before_filter :authenticate
+  before_filter :authorize, :only => [:reorder, :shuffle, :update, :destroy]
+  
+  def authorize
+    @deck = Deck.find( params[:id] ) if params[:id]
+    @deck = Deck.find( params[:deck_id] ) if params[:deck_id]
+    
+    unless current_user == @deck.user
+      redirect_to root_url, notice: "You are not authorized to access that"
+    end
+  end
   
   # GET /decks
   # GET /decks.json

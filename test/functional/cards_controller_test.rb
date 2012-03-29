@@ -16,6 +16,11 @@ class CardsControllerTest < ActionController::TestCase
     get :new, :deck_id => decks(:one)
     assert_response :success
   end
+  
+  test "should not be able to access other users cards" do
+    get :index, :deck_id => decks(:two)
+    assert_redirected_to root_url
+  end
 
   test "should create card" do
     assert_difference('Card.count') do

@@ -13,7 +13,7 @@ class DecksControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:decks)
   end
-  
+    
   test "should not get index if not logged in" do
     logout( )
     get :index
@@ -58,6 +58,11 @@ class DecksControllerTest < ActionController::TestCase
     put :update, id: @deck, deck: {name: 'updated name'}
     assert_redirected_to deck_cards_path(assigns(:deck))
   end
+  
+  test "should not be able to update other users decks" do
+    put :update, id: decks(:two), deck: {name: 'new name'}
+    assert_redirected_to root_path
+  end
 
   test "should destroy deck" do
     assert_difference('Deck.count', -1) do
@@ -65,6 +70,14 @@ class DecksControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to decks_path
+  end
+  
+  test "shouod not destroy other users decks" do
+    assert_no_difference('Deck.count') do
+      delete :destroy, id: decks(:two)
+    end
+    
+    assert_redirected_to root_path
   end
 end
 

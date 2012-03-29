@@ -12,8 +12,18 @@ one:
 two:
   id: 2
   email: user2@test.com
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create("secret") %>
   role: MyString
   reg_hash: <%= Digest::SHA256.hexdigest( "user2@test.com" + 2.to_s ) %>
   registered: true
   emailed_at: <%= Time.now - 4.days %>
+
+admin:
+  id: 3
+  email: user3@test.com
+  password_digest: <%= BCrypt::Password.create("secret") %>
+  role: admin
+  reg_hash: <%= Digest::SHA256.hexdigest( "user3@test.com" + 3.to_s ) %>
+  registered: true
+  emailed_at: <%= Time.now - 4.days %>
+  

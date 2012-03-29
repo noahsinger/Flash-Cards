@@ -2,6 +2,13 @@ class CardsController < ApplicationController
   
   before_filter :authenticate
   before_filter :load_deck
+  before_filter :authorize
+  
+  def authorize
+    unless current_user == @deck.user
+      redirect_to root_url, notice: "You are not authorized to access that"
+    end
+  end
   
   def load_deck
     @deck = Deck.find( params[:deck_id] )

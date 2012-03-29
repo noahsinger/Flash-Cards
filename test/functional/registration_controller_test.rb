@@ -9,7 +9,7 @@ class RegistrationControllerTest < ActionController::TestCase
   test "should create/register user" do
     assert_difference('ActionMailer::Base.deliveries.size') do
       assert_difference('User.count') do
-        post :create, email: "user3@test.com", password: "secret", password_confirmation: "secret"
+        post :create, email: "new_user@test.com", password: "secret", password_confirmation: "secret"
       end
     end
 

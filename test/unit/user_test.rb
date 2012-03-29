@@ -5,7 +5,7 @@ class UserTest < ActiveSupport::TestCase
   
   test "should allow valid email addresses" do
     user1 = User.create( :email => "noah@test.com", :password => "secret" )
-    assert_equal 3, User.count
+    assert_equal 4, User.count
   end
   
   test "should have a reg_hash" do

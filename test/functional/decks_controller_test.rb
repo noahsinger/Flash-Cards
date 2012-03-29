@@ -3,6 +3,7 @@ require 'test_helper'
 class DecksControllerTest < ActionController::TestCase
   setup do
     @deck = decks(:one)
+    login( users(:one) )
   end
 
   test "should get index if loggedin" do
@@ -14,8 +15,9 @@ class DecksControllerTest < ActionController::TestCase
   end
   
   test "should not get index if not logged in" do
+    logout( )
     get :index
-    assert_redirected_to new_session_path
+    assert_redirected_to root_path
   end
 
   test "should get new" do

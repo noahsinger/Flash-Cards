@@ -15,5 +15,5 @@ two:
   password_digest: MyString
   role: MyString
   reg_hash: <%= Digest::SHA256.hexdigest( "user2@test.com" + 2.to_s ) %>
-  registered: false
+  registered: true
   emailed_at: <%= Time.now - 4.days %>

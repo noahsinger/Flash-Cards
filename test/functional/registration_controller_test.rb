@@ -34,6 +34,36 @@ class RegistrationControllerTest < ActionController::TestCase
     get :confirmation, id: '7618746328746534785634782'
     assert_redirected_to root_path
   end
+  
+  test "should get edit page" do
+    login( users(:one) )
+    get :edit, id: users(:one).id
+    assert_response :success
+  end
+  
+  test "should not be able to edit a different user" do
+    login(users(:one))
+    get :edit, id: users(:two).id
+    assert_redirected_to root_path
+  end
+  
+  test "should update users email address" do
+    login(users(:one))
+
+    assert_difference('ActionMailer::Base.deliveries.size') do
+      put :update, id: users(:one).id, email: "updated_user@test.com"
+    end
+    
+    assert_equal "updated_user@test.com", assigns(:user).email
+    assert_redirected_to decks_path
+  end
+  
+  test "should update users password" do
+    login(users(:one))
+    put :update, id: users(:one).id, password: "newpass", password_confirmation: "newpass"
+    
+    assert_redirected_to decks_path
+  end
 end
 
 

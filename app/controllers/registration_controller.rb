@@ -22,7 +22,6 @@ class RegistrationController < ApplicationController
         format.html { redirect_to root_url, notice: 'Check your Email!  We just sent you a link to verify your email address.' }
         format.json { render json: @user, status: :created, location: @user }
       else
-        flash.now.alert = "Your password and confirmation did not match"
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -46,16 +45,13 @@ class RegistrationController < ApplicationController
   
   def update
     @user = User.find params[:id]    
-    @user.email = params[:email] if params[:email] and not params[:email].blank?
-    @user.password = params[:password] if params[:password] and not params[:password].blank?
-
-    email_changed = @user.email_changed?
+    old_email = @user.email
 
     respond_to do |format|
-      if @user.save
+      if @user.update_attributes( {email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation]} )
         
         msg = ""
-        if email_changed
+        unless old_email == @user.email
           UserMailer.registration( @user ).deliver
           msg = "An email has been sent to your new address, please confirm by clicking the link in that email"
         end
@@ -63,7 +59,7 @@ class RegistrationController < ApplicationController
         format.html { redirect_to decks_url, notice: "Your profile has been updated. #{msg}" }
         format.json { render json: @user, status: :created, location: @user }
       else
-        flash.now.alert = "There was a problem"
+        flash.now.alert = "There was a problem saving your changes"
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

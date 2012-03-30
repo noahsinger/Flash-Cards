@@ -3,6 +3,18 @@
 <p><%= alert %></p>
 
 <%= form_tag registration_index_path do %>
+	<% if @user.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@user.errors.count, "error") %> prohibited your account from being saved:</h2>
+
+	    <ul>
+	    <% @user.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+	
 	<p>
 		<%= label_tag :email %>
 		<%= text_field_tag :email, params[:email] %>

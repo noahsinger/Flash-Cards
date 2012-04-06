@@ -8,11 +8,13 @@
 </head>
 <body id="<%= controller.controller_name %>_<%= controller.action_name %>">
 
-	<section id="content">
+	<section id="page">
 		<header id="main">
-			This is the header.
+			<h1><%= yield :page_header %></h1>
 		</header>
 
+		<div id="content"><%= yield %></div>
+				
 		<nav id="session_links">
 			<% if current_user %>
 				<%= link_to 'Edit Profile', edit_registration_path(current_user) %> |
@@ -20,14 +22,16 @@
 			<% end %>
 		</nav>
 
-		<%= yield %>
-		
-		<nav id="ribbon">
-			<ul>
-				<li><%= link_to 'About', '' %></li>
-				<li><%= link_to 'Contact', '' %></li>
-			</ul>
-		</nav>
+		<section id="control_panel">
+			<h1>Little White Cards</h1>
+			<nav id="ribbon">
+				<ul>
+					<li class="about_us"><%= link_to 'About', '' %></li>
+					<li class="contact_us"><%= link_to 'Contact', '' %></li>
+					<%= yield :ribbon_links %>
+				</ul>
+			</nav>
+		</section>
 	</section>
 
 </body>

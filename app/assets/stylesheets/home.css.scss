@@ -1,3 +1,64 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixins';
+
+#home_index {
+	font-size: 1.5em;
+	text-align: center;
+	margin-top: 58px;
+	
+	header {
+		h1 {
+			font-family: 'BloklettersBalpen', helvetica;
+		}
+	}
+	
+	header#main {
+		display: none;
+	}
+	
+	#session_links {
+		display: none;
+	}
+	
+	section#content {
+		width: 50%;
+		margin: 0 auto;
+	}
+	
+	form {
+		border: 1px solid #444;
+		padding: 1em;
+		
+		@include border-radius( 5px );
+		
+		input[type=text], input[type=password] {
+			font-size: 1.5em;
+			padding: 5px 10px;
+			
+			@include border-radius( 5px );
+		}
+		
+		input[type=submit] {
+			font-size: 1.2em;
+		}
+		
+		label[for=email] {
+			display: none;
+		}
+		
+		label[for=password], label[for=password_confirmation] {
+			display: block;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

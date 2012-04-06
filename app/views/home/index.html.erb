@@ -1,14 +1,18 @@
-<h1>Home#index</h1>
+<header>
+	<h1>Little White Cards</h1>
+</header>
 
-<%= notice %>
+<div>
+	<%= notice %>
 
-<%= form_tag :users, id: 'home_form' do %>
-	<p>
-		<%= label_tag :email %>
-		<%= text_field_tag :email %>
-	</p>
-	<div id="additional_fields"></div>
-	<p>
-		<%= submit_tag 'Login / Register', {id: 'action_button'} %>
-	</p>
-<% end %>
+	<%= form_tag :users, id: 'home_form' do %>
+		<p>
+			<%= label_tag :email %>
+			<%= text_field_tag :email, '', placeholder: "Email" %>
+		</p>
+		<div id="additional_fields"></div>
+		<p>
+			<%= submit_tag 'Login / Register', {id: 'action_button'} %>
+		</p>
+	<% end %>
+</div>

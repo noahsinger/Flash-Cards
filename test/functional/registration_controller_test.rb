@@ -60,7 +60,7 @@ class RegistrationControllerTest < ActionController::TestCase
   
   test "should update users password" do
     login(users(:one))
-    put :update, id: users(:one).id, password: "newpass", password_confirmation: "newpass"
+    put :update, id: users(:one).id, email: users(:one).email, password: "newpass", password_confirmation: "newpass"
     
     assert_redirected_to decks_path
   end

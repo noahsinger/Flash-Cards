@@ -11,6 +11,7 @@ class RegistrationController < ApplicationController
   end
     
 	def	new
+	  @user = User.new
 	end
 
   def create

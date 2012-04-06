@@ -7,13 +7,31 @@
 
 $card_size: 120px;
 
+
+
+// ------------------------
+// body
+//
+
 body {
 	margin: 0;
 }
 
+
+
+// ------------------------
+// general styles
+//
+
 a {
 	text-decoration: none;
 }
+
+
+
+// ------------------------
+// page header
+//
 
 header#main {
 	background-color: #000;
@@ -24,16 +42,23 @@ header#main {
 	}	
 }
 
+
+
+// ------------------------
+// content area holds cards and decks
+//
+
 div#content {
 //	border: 1px solid green;
-	width: 80%;
+	width: 70%;
 	float: left;
 }
 
-li.about_us, li.contact_us {
-	display: none;
-}
 
+
+// ------------------------
+// card and deck styles
+//
 
 ol.decks, ol.cards {
 	list-style: none;
@@ -64,7 +89,7 @@ ol.decks, ol.cards {
 			height: $card_size;		
 		}
 	}
-}
+} // end ol.decks, ol.cards
 
 ol.decks {
 	li {			  
@@ -75,6 +100,18 @@ ol.decks {
 			20px 20px 1px -9px rgba(0,0,0,0.35);    /* 3rd card shadow */ 
 	}
 }
+
+ol.cards {
+	li {
+		box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
+	}
+}
+
+
+
+// ------------------------
+// form styles
+//
 
 form {
 	margin: 20px;
@@ -93,44 +130,39 @@ form {
 	input[type="submit"] {
 		font-size: 1.2em;
 	}
-}
+} //end form
 
 
-ol.cards {
-	li {
-		box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
-	}
-}
 
-nav#session_links {
-	position: absolute;
-	top: 5px;
-	right: 25px;
-	
-	a {
-		color: #fff;
-	}
-}
+// ------------------------
+// control panel with ribbon
+//
 
 section#control_panel {
 //	border: 1px solid red;
-	float: right;
+	float: left;
 	margin-right: 20px;
-	width: 16%;
+	width: 300px;
 	text-align: center;
 	position: relative;
-	top: -50px;
+	top: -70px;
+	
+	nav#session_links {
+		margin-bottom: 20px;
+
+		a {
+			color: #fff;
+		}
+	}
 	
 	h1 {
+		font-family: 'BloklettersBalpen', helvetica;
 		margin: 0;
 		padding: 0;
 		color: #fff;
 	}
 	
-	nav#ribbon {
-	
-		height: 100px;
-	
+	nav#ribbon {	
 //		margin-top: 30px;
 		margin-top: 5px;
 		border-top: 1px solid #ccc;
@@ -153,6 +185,10 @@ section#control_panel {
 				a {
 					color: #fff;
 				}
+			}
+			
+			li.about_us, li.contact_us {
+				display: none;
 			}
 		}
 	}

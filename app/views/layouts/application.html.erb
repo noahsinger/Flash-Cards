@@ -14,15 +14,15 @@
 		</header>
 
 		<div id="content"><%= yield %></div>
-				
-		<nav id="session_links">
-			<% if current_user %>
-				<%= link_to 'Edit Profile', edit_registration_path(current_user) %> |
-				<%= link_to 'Logout', logout_path, :method => :delete %>
-			<% end %>
-		</nav>
 
 		<section id="control_panel">
+			<nav id="session_links">
+				<% if current_user %>
+					<%= link_to 'Edit Profile', edit_registration_path(current_user) %> |
+					<%= link_to 'Logout', logout_path, :method => :delete %>
+				<% end %>
+			</nav>
+			
 			<h1>Little White Cards</h1>
 			<nav id="ribbon">
 				<ul>

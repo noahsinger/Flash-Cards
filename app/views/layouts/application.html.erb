@@ -8,31 +8,46 @@
 </head>
 <body id="<%= controller.controller_name %>_<%= controller.action_name %>">
 
-	<section id="page">
+	<div id="page">
+		
 		<header id="main">
-			<h1><%= yield :page_header %></h1>
+			<div class="narrow">
+				<h1><%= yield :page_header %></h1>
+			</div>
 		</header>
 
-		<div id="content"><%= yield %></div>
+		<div class="narrow">
+			<section id="content"><%= yield %></section>
 
-		<section id="control_panel">
-			<nav id="session_links">
-				<% if current_user %>
-					<%= link_to 'Edit Profile', edit_registration_path(current_user) %> |
-					<%= link_to 'Logout', logout_path, :method => :delete %>
-				<% end %>
-			</nav>
+			<section id="control_panel">
+				<nav id="session_links">
+					<% if current_user %>
+						<%= link_to 'Your Profile', edit_registration_path(current_user) %> |
+						<%= link_to 'Logout', logout_path, :method => :delete %>
+					<% end %>
+				</nav>
 			
-			<h1>Little White Cards</h1>
-			<nav id="ribbon">
-				<ul>
-					<li class="about_us"><%= link_to 'About', '' %></li>
-					<li class="contact_us"><%= link_to 'Contact', '' %></li>
-					<%= yield :ribbon_links %>
-				</ul>
-			</nav>
-		</section>
-	</section>
+				<h1>Little White Cards</h1>
+				<nav id="ribbon">
+					<ul>
+						<%= yield :ribbon_links %>
+						<li class="about_us"><%= link_to 'About', '' %></li>
+						<li class="contact_us"><%= link_to 'Contact', '' %></li>
+						<li id="end"></li>
+					</ul>
+				</nav>
+			</section>
+		</div> <!--end narrow-->
+			
+		<footer id="main">
+			<div class="narrow">
+				Copyright &copy; 2012 - <%= Time.zone.now.year %>
+				<%= link_to 'Little White Cards', '' %>
+				<%= link_to 'About', '', class: 'about_us' %>
+				<%= link_to 'Contact', '', class: 'contact_us' %>
+			</div>
+		</footer>
+	</div> <!--end page-->
 
 </body>
 </html>

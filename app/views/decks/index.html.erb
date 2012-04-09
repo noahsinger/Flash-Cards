@@ -11,7 +11,9 @@
 <ol class="decks">
 	<% @decks.each do |deck| %>
 		<li>
-			<div class="content"><%= deck.name %></div>
+			<div class="content">
+				<%= link_to deck.name, deck_card_path(deck, deck.cards.first) %>
+			</div>
 		</li>
 	<% end %>
 </ol>

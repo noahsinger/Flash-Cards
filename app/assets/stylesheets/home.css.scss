@@ -16,18 +16,18 @@
 		display: none;
 	}
 	
+	footer#main {
+		display: none;
+	}
+	
 	#session_links {
 		display: none;
 	}
 	
-	section#page {
-		width: 50%;
-		margin: 0 auto;
-	}
-	
-	div#content {
+	#content {
 		float: none;
-		width: 100%;
+		margin: 0 auto;
+		width: 50%;
 	}
 	
 	form {
@@ -54,11 +54,10 @@
 	//
 
 	section#control_panel {
-	//	border: 1px solid red;
 		float: none;
 		margin: 0 auto;
-		width: 300px;
 		top: 0px;
+		width: 50%;
 
 		h1 {
 			display: none;

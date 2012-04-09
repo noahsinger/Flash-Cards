@@ -1,30 +1,24 @@
-<h1>Listing cards for deck <%= @deck.name %></h1>
+<%= content_for :page_header do %>
+	<h1>Deck "<%= @deck.name %>"</h1>
+	<%= link_to "Your Decks", decks_path %>
+<% end %>
+
+<%= content_for :ribbon_links do %>
+	<li><%= link_to 'Add a New Card', new_deck_card_path(@deck) %></li>
+	<li><%= link_to 'Reorder Deck', deck_reorder_path(@deck) %></li>
+<% end %>
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @cards.each do |card| %>
-  <tr>
-    <td><%= render card %></td>
-    <td><%= link_to 'Show', [@deck,card] %></td>
-    <td><%= link_to 'Edit', edit_deck_card_path(@deck,card) %></td>
-    <td><%= link_to 'Destroy', [@deck,card], confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<ol class="cards">
+	<% @cards.each do |card| %>
+		<li class="card">
+			<div class="content"><%= render card %></div>
+		</li>
+	<% end %>
+</ol>
 
-<br />
-
-<%= link_to "Decks", decks_path %> | 
-<%= link_to 'New Card', new_deck_card_path(@deck) %> |
-<%= link_to 'Reorder Deck', deck_reorder_path(@deck) %>
 
 
 

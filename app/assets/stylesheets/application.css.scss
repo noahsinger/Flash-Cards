@@ -159,6 +159,16 @@ form {
 	
 	input[type="submit"] {
 		font-size: 1.2em;
+		background-color: #900;
+		color: #fff;
+		border: 1px solid #600;
+		padding: 7px 15px;
+		@include border-radius( 3px );
+		
+		&:hover {
+			background-color: #a00;
+			border: 1px solid #900;
+		}
 	}
 } //end form
 
@@ -214,7 +224,7 @@ section#control_panel {
 
 				&#end {
 					background-color: transparent;
-					background-image: url(ribbon_end.gif);
+					background-image: url(ribbon_end.png);
 					background-repeat: no-repeat;
 					min-height: 160px;
 					background-size: 100%;

@@ -8,4 +8,9 @@ one:
 two:
   id: 2
   name: MyString
-  user_id: 2 
+  user_id: 2
+  
+three:
+  id: 3
+  name: Empty Deck
+  user_id: 1

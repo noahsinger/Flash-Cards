@@ -1,21 +1,21 @@
 <%# decks index %>
 
-<% content_for :page_header do %>
+<%= content_for :page_header do %>
 	<h1>Your Decks</h1>
 <% end %>
 
-<% content_for :ribbon_links do %>
+<%= content_for :ribbon_links do %>
 	<li><%= link_to 'New Deck', new_deck_path %></li>
 <% end %>
 
+
 <p><%= notice %></p>
+
 
 <ol class="decks">
 	<% @decks.each do |deck| %>
 		<li>
-			<div class="content">
-				<%= link_to deck.name, deck_card_path(deck, deck.cards.first) %>
-			</div>
+			<%= render deck %>
 		</li>
 	<% end %>
 </ol>

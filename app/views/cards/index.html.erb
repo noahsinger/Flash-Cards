@@ -1,3 +1,5 @@
+<%# cards index %>
+
 <%= content_for :page_header do %>
 	<h1>Deck "<%= @deck.name %>"</h1>
 	<%= link_to "Your Decks", decks_path %>
@@ -8,13 +10,14 @@
 	<li><%= link_to 'Reorder Deck', deck_reorder_path(@deck) %></li>
 <% end %>
 
+
 <p><%= notice %></p>
 
 
 <ol class="cards">
 	<% @cards.each do |card| %>
-		<li class="card">
-			<div class="content"><%= render card %></div>
+		<li>
+			<%= render card %>
 		</li>
 	<% end %>
 </ol>

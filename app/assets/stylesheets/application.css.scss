@@ -176,7 +176,7 @@ ol.decks {
 ol.cards {
 	li {
 		box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
-		
+				
 		a.manage {
 			background-image: url( x_32.png );
 		}
@@ -208,11 +208,11 @@ ol.cards {
 }
 
 span.prev {
-	background-image: none;
+	background-image: url( left_arrow_64_disabled.png );
 }
 
 span.next {
-	background-image: none;
+	background-image: url( right_arrow_64_disabled.png );
 }
 
 

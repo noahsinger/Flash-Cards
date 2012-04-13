@@ -1,13 +1,15 @@
+<%= content_for :page_header do %>
+	<h1 id="card_header">
+		<%= render 'show_card_header' %>
+	</h1>
+<% end %>
+
+<%= content_for :ribbon_links do %>
+	<li><%= link_to 'Done', decks_path %></li>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Content:</b>
-  <%= @card.content %>
-</p>
-
-<%= link_to_prev 'prev', @card %> | <%= link_to_next 'next', @card %>
-
-<br/>
-
-<%= link_to 'Edit', edit_deck_card_path(@deck,@card) %> |
-<%= link_to 'Back', deck_cards_path(@deck) %>
+<div id="big_card">
+	<%= render 'big_card' %>
+</div>

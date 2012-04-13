@@ -15,6 +15,7 @@
 <ol class="decks">
 	<% @decks.each do |deck| %>
 		<li>
+			<%= link_to '', deck_cards_path(deck), class: "manage" %>
 			<%= render deck %>
 		</li>
 	<% end %>

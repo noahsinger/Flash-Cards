@@ -53,7 +53,7 @@ a {
 
 footer#main {
 	.narrow {
-//		margin-top: 40px;
+		margin-top: 20px;
 		padding: 20px;
 		min-height: 100px;
 		border-top: 1px solid #ddd;
@@ -89,6 +89,26 @@ header#main {
 // card and deck styles
 //
 
+.big_card {
+	float: left;
+	border: 1px solid #000;
+	width: 300px;
+	height: 300px;
+	font-family: 'BloklettersBalpen';
+	font-size: 4em;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
+	margin: 20px 0;
+	
+	.content {
+		@include debug_border;
+		text-align: center;
+		display: table-cell;
+		vertical-align: middle;
+		width: 300px;
+		height: 300px;
+	}
+}
+
 ol.decks, ol.cards {
 	list-style: none;
 	padding: 0;
@@ -109,6 +129,8 @@ ol.decks, ol.cards {
 		text-align: center;
 		
 		.content {
+			position: relative;
+			top: -35px;
 			padding-top: 5px;
 			display: table-cell;
 			text-align: center;
@@ -117,6 +139,22 @@ ol.decks, ol.cards {
 
 			width: $card_size;
 			height: $card_size;		
+			
+			.sub {
+				font-size: .6em;
+			}
+		}
+		
+		a.manage {
+			@include debug_border;
+
+			display: block;
+			width: 32px;
+			height: 32px;
+			
+			position: relative;
+			top: -35px;
+			left: -35px;
 		}
 	}
 } // end ol.decks, ol.cards
@@ -128,13 +166,53 @@ ol.decks {
 			10px 10px 1px -4px rgba(0,0,0,0.35),    /* 2nd card shadow */ 
 			20px 20px 0 -10px #fff,                 /* 3rd card layer */ 
 			20px 20px 1px -9px rgba(0,0,0,0.35);    /* 3rd card shadow */ 
+	
+		a.manage {
+			background-image: url( cog_32.png );
+		}
 	}
 }
 
 ol.cards {
 	li {
 		box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
+		
+		a.manage {
+			background-image: url( x_32.png );
+		}
 	}
+}
+
+
+// ------------------------
+// arrow link styles (cards show)
+//
+
+.arrow_links {
+	float: left;
+	width: 64px;
+	height: 64px;
+	position: relative;
+	top: 138px;
+	margin: 0 15px;
+}
+
+.next {
+	background-image: url( right_arrow_64.png );
+	margin-right: 0;
+}
+
+.prev {
+	background-image: url( left_arrow_64.png );
+	margin-left: 0;
+}
+
+span.prev {
+	background-image: none;
+}
+
+span.next {
+	background-image: none;
 }
 
 
@@ -153,7 +231,7 @@ form {
 		@include border-radius( 5px );
 	}	
 	
-	label[for=deck_name] {
+	label[for=deck_name], label[for=card_content] {
 		display: none;
 	}
 	

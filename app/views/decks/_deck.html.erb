@@ -1,3 +1,8 @@
 <div class="content">
-	<%= link_to deck.name, deck_card_path(deck, deck.cards.first) %>
+	<% if deck.cards.count > 0 %>
+		<%= link_to deck.name, deck_card_path(deck, deck.cards.first) %>
+	<% else %>
+		<%= link_to deck.name, new_deck_card_path(deck) %>
+		<%= link_to '(Add Cards)', new_deck_card_path(deck), class: 'sub' %>
+	<% end %>
 </div>

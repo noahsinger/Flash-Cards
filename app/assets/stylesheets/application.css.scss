@@ -92,22 +92,27 @@ header#main {
 .big_card {
 	float: left;
 	border: 1px solid #000;
-	width: 300px;
-	height: 300px;
+	width: 280px;
+	height: 280px;
 	font-family: 'BloklettersBalpen';
 	font-size: 4em;
 	box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
 	margin: 20px 0;
-	
+	padding: 20px;
+
 	.content {
 		@include debug_border;
+
 		text-align: center;
 		display: table-cell;
 		vertical-align: middle;
-		width: 300px;
-		height: 300px;
+		line-height: 35px;
+
+		width: 280px;
+		height: 280px;
 	}
 }
+
 
 ol.decks, ol.cards {
 	list-style: none;
@@ -121,11 +126,8 @@ ol.decks, ol.cards {
 		height: $card_size;
 
 		border: 1px solid #000;
-
 		font-family: 'BloklettersPotlood';
-
 		font-size: 2em;
-
 		text-align: center;
 		
 		.content {
@@ -207,12 +209,12 @@ ol.cards {
 	margin-left: 0;
 }
 
-span.prev {
-	background-image: url( left_arrow_64_disabled.png );
-}
-
 span.next {
 	background-image: url( right_arrow_64_disabled.png );
+}
+
+span.prev {
+	background-image: url( left_arrow_64_disabled.png );
 }
 
 
@@ -294,6 +296,18 @@ section#control_panel {
 			
 				a {
 					color: #fff;
+				}
+				
+				&.destroy a {
+					display: block;
+					padding: 4px 8px;
+					background-color: #c00;
+					border: 1px solid #700;
+					@include border_radius( 3px );
+					
+					&:hover {
+						background-color: #d00;
+					}
 				}
 				
 				&.about_us, &.contact_us {

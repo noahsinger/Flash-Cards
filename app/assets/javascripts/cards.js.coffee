@@ -3,7 +3,8 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 document.scale_card_content = ->
-	setTimeout ->
+  font = new Font( )
+  font.onload = -> 
     $(".cards li .content, .big_card .content").each ->
       parent_padding = parseInt($(this).parent( ).css("padding-left")) + parseInt($(this).parent( ).css("border-left-width"))
       max_width = $(this).parent( ).width( ) - parent_padding
@@ -13,8 +14,10 @@ document.scale_card_content = ->
 
       if text_width > max_width
         scaleDown( $(this), max_width )
-        console.log "\tnew text width is #{textWidth( $(this) )}"
-		, 50
+        console.log "\tnew text width is #{textWidth( $(this) )}"  
+
+  font.fontFamily = "BloklettersBalpen"
+  font.src = font.fontFamily
 
 			
 textWidth = (element) -> 

@@ -1,7 +1,7 @@
 
 document.scale_card_content = ->
   $(".cards li .content, .big_card .content").each ->
-    $(this).css( "display", "none" )
+    $(this).css( "visibility", "hidden" )
 
   font = new Font( )
   font.onload = -> 
@@ -15,16 +15,25 @@ document.scale_card_content = ->
         scaleDown( $(this), max_width, font )
         console.log "\tnew text width is #{textWidth( $(this), font )}"
       
-      $(this).css( "display", "table-cell" )
+      $(this).css( "visibility", "visible" )
 
   font.fontFamily = "BloklettersBalpen"
   font.src = font.fontFamily
 
-		
+# slow and accurate		
 textWidth = (element, font) ->
   size = element.css("font-size")
   width = font.measureText(element.text( ), parseInt(size)).width
   width
+
+# fast but inaccurate
+# textWidth = (element, font) -> 
+#   text = element.text( )													#get the text
+#   wrapped = '<span>' + text + '</span>'						#wrap the text
+#   element.html( wrapped )													#put the wrapped text into the element
+#   width = element.find( 'span:first' ).width( )		#find the width of the wrapped text
+#   element.html( text )														#put the original text back
+#   width
 
 
 scaleDown = (element, max_width, font) ->

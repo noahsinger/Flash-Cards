@@ -15,6 +15,7 @@ $card_size: 100px;
 
 body {
 	margin: 0;
+	background-image: url(square_bg.png);
 }
 
 
@@ -57,16 +58,16 @@ footer#main {
 		padding: 20px;
 		min-height: 100px;
 		border-top: 1px solid #ddd;
-		background-image: -moz-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.7), #fefff7 75%);
-		background-image: -webkit-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.7), #ffffff 75%);
-		background-image: -o-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.7), #fefff7 75%);
-		background-image: -ms-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.7), #fefff7 75%);
-		background-image: radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.7), #fefff7 75%);	
+		background-image: -moz-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+		background-image: -webkit-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+		background-image: -o-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+		background-image: -ms-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+		background-image: radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);	
 	}
 	
 	.about_us, .contact_us {
 		float: right;
-		padding-right: 20px;
+		padding-left: 20px;
 	}
 }
 
@@ -76,6 +77,7 @@ footer#main {
 
 header#main {
 	background-color: #000;
+	background-image: url(dark_dotted.png);
 	padding: 20px 0;
 	
 	h1 {
@@ -90,6 +92,7 @@ header#main {
 //
 
 .big_card {
+	background-color: #fff;
 	float: left;
 	border: 1px solid #000;
 	width: 280px;
@@ -119,6 +122,7 @@ ol.decks, ol.cards {
 	padding: 0;
 	
 	li {
+		background-color: #fff;
 		margin: 20px 20px 20px 0;
 		padding: 20px;
 		float: left;

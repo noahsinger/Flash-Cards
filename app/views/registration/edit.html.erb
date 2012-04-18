@@ -1,4 +1,10 @@
-<h1>Update Your Profile</h1>
+<%= content_for :page_header do %>
+	<h1>Update Your Profile</h1>
+<% end %>
+
+<%= content_for :ribbon_links do %>
+	<li><%= link_to 'Cancel', decks_path %></li>
+<% end %>
 
 <p><%= alert %></p>
 
@@ -15,15 +21,15 @@
 	  </div>
 	<% end %>
 	<p>
-		<%= label_tag :email %>
+		<%= label_tag :email %><br/>
 		<%= text_field_tag :email, @user.email %>
 	</p>
 	<p>
-		<%= label_tag :password %>
+		<%= label_tag :password %><br/>
 		<%= password_field_tag :password %>
 	</p>
 	<p>
-		<%= label_tag :password_confirmation %>
+		<%= label_tag :password_confirmation %><br/>
 		<%= password_field_tag :password_confirmation %>
 	</p>
 	<p>

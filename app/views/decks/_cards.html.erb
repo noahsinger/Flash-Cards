@@ -1,15 +1,19 @@
-<table>
+<table class="cards">
 	<% @deck.cards.each do |card| %>
 		<tr>
 			<td><%= card.content %></td>
 			<td>
 				<% unless card.first? %>
-					<%= link_to 'Up', deck_card_move_up_path(@deck, card), :remote => true %>
+					<%= link_to deck_card_move_up_path(@deck, card), :remote => true do %>
+						<%= image_tag "up_arrow_32.png", alt: "up" %>
+					<% end %>
 				<% end %>
 			</td>
 			<td>
 				<% unless card.last? %>
-					<%= link_to 'Down', deck_card_move_down_path(@deck,card), :remote => true %>
+					<%= link_to deck_card_move_down_path(@deck,card), :remote => true do %>
+						<%= image_tag "down_arrow_32.png", alt: "down" %>
+					<% end %>
 				<% end %>
 			</td>
 		</tr>

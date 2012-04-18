@@ -1,9 +1,14 @@
-<h1>Reorder</h1>
+<%= content_for :page_header do %>
+	<h1>Reorder</h1>
+<% end %>
 
-<%= link_to 'Shuffle', deck_shuffle_path(@deck), :remote => true %>
+<%= content_for :ribbon_links do %>
+	<li><%= link_to 'Shuffle', deck_shuffle_path(@deck), :remote => true %></li>
+	<li><%= link_to "Done", deck_cards_path(@deck) %></li>
+<% end %>
+
 
 <div id="cards_table">
 	<%= render 'cards' %>
 </div>
 
-<%= link_to "Done", deck_cards_path(@deck) %>

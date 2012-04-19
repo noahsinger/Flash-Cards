@@ -16,6 +16,7 @@ group :development, :test do
 	gem "letter_opener"
 	gem "turn"
 	gem "minitest"
+	gem "quiet_assets"
 	
 	gem "guard-minitest", :git => "http://github.com/aspiers/guard-minitest.git"
 	gem "ruby-prof"  #for guard-minitest

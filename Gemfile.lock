@@ -76,6 +76,8 @@ GEM
     minitest (2.11.3)
     multi_json (1.1.0)
     polyglot (0.3.3)
+    quiet_assets (1.0.0)
+      rails (~> 3.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -137,6 +139,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   minitest
+  quiet_assets
   rails (= 3.2.2)
   ruby-prof
   sass-rails (~> 3.2.3)

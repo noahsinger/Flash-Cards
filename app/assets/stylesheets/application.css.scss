@@ -316,6 +316,22 @@ form {
 } //end form
 
 
+// ------------------------
+// rest-in-place forms
+//
+ 
+li {
+	form {
+		margin: 0;
+		
+		input[type=text] {
+			text-align: center;
+			font-size: 1em;
+			width: 80%;
+		}
+	}
+}
+
 
 // ------------------------
 // control panel with ribbon

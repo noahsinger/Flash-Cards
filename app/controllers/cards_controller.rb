@@ -116,6 +116,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to deck_cards_url(@deck) }
       format.json { head :no_content }
+      format.js
     end
   end
 end

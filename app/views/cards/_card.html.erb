@@ -1,3 +1,8 @@
-<div class="content">
-	<%= card.content %>
-</div>
+<li id="card_<%= card.id %>">
+	<%= link_to '', deck_card_path(@deck, card), method: :delete, class: 'manage', remote: true, confirm: "Are you sure?  This cannot be undone." %>
+	<div class="content">
+		<span class="rest-in-place" data-url="<%= deck_card_path(@deck, card) %>" data-object="card" data-attribute="content">
+			<%= card.content %>
+		</span>
+	</div>
+</li>

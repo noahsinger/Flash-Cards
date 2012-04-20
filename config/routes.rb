@@ -7,6 +7,10 @@ Flashcards::Application.routes.draw do
     
     get "reorder"
     get "shuffle"
+    
+    collection do
+      get "test_flash"
+    end
   end
 
   resources :users 

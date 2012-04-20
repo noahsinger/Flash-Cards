@@ -21,19 +21,19 @@ document.scale_card_content = ->
   font.src = font.fontFamily
 
 # slow and accurate		
-textWidth = (element, font) ->
-  size = element.css("font-size")
-  width = font.measureText(element.text( ), parseInt(size)).width
-  width
+# textWidth = (element, font) ->
+#   size = element.css("font-size")
+#   width = font.measureText(element.text( ), parseInt(size)).width
+#   width
 
 # fast but inaccurate
-# textWidth = (element, font) -> 
-#   text = element.text( )													#get the text
-#   wrapped = '<span>' + text + '</span>'						#wrap the text
-#   element.html( wrapped )													#put the wrapped text into the element
-#   width = element.find( 'span:first' ).width( )		#find the width of the wrapped text
-#   element.html( text )														#put the original text back
-#   width
+textWidth = (element, font) -> 
+  text = element.text( )													#get the text
+  wrapped = '<span>' + text + '</span>'						#wrap the text
+  element.html( wrapped )													#put the wrapped text into the element
+  width = element.find( 'span:first' ).width( )		#find the width of the wrapped text
+  element.html( text )														#put the original text back
+  width
 
 
 scaleDown = (element, max_width, font) ->

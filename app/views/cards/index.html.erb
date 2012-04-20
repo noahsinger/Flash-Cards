@@ -1,7 +1,7 @@
 <%# cards index %>
 
 <%= content_for :page_header do %>
-	<h1><%= @deck.cards.count %> Card Deck</h1>
+	<h1><span id="card_count"><%= @deck.cards.count %></span> Card Deck</h1>
 	<%= link_to "Back to Decks", decks_path %>
 <% end %>
 
@@ -17,10 +17,6 @@
 	<li><%= link_to 'Reorder Deck', deck_reorder_path(@deck) %></li>
 	<li class="destroy"><%= link_to 'Destroy this Deck', deck_path(@deck), method: :delete, confirm: "Are you sure? This cannot be undone." %></li>
 <% end %>
-
-
-<p><%= notice %></p>
-
 
 <ol class="cards">
 	<% @cards.each do |card| %>

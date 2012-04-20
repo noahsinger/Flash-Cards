@@ -1,8 +1,11 @@
-<% if @card.errors.any? %>
-	// $("#alert").html( "<%= @card.errors.full_messages.join(', ') %>" );
-<% else %>
-	// $("#notice").html( "The \"<%= @card.content %>\" card was added" );
+$("#flash_holder").html( "<%= j render( "shared/flash_messages" ) %>" );
+$(".flash_msg").slideDown( "slow" )
+
+<% unless @card.errors.size > 0 %>
 	$("#card_content").val( "" );
 	$("#new_cards").prepend( "<%= j render( @card ) %>" );
-	$('.rest-in-place').restInPlace( );
 <% end %>
+
+
+$('.rest-in-place').restInPlace( );
+document.scale_card_content( );

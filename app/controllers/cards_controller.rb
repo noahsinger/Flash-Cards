@@ -60,10 +60,12 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to new_deck_card_url(@deck), notice: 'Card was successfully created.' }
+        # flash.now.notice = "\"#{@card.content}\" was added to the deck"
+        format.html { redirect_to new_deck_card_url(@deck) }
         format.json { render json: @card, status: :created, location: @card }
         format.js
       else
+        flash.now.alert = @card.errors.full_messages.join(', ')
         format.html { render action: "new" }
         format.json { render json: @card.errors, status: :unprocessable_entity }
         format.js
@@ -114,6 +116,7 @@ class CardsController < ApplicationController
     @card.destroy
 
     respond_to do |format|
+      # flash.now.notice = "\"#{@card.content}\" was removed"
       format.html { redirect_to deck_cards_url(@deck) }
       format.json { head :no_content }
       format.js

@@ -16,18 +16,7 @@
 			</div>
 		</header>
 		
-		<% flash.each do |type, msg| %>
-			<div id="<%= type %>" class="flash_msg">
-				<div class="narrow">
-					<div class="content">
-						<%= msg %>
-						<%# if type == :notice %>
-							<%# image_tag "success_64.png" %>
-						<%# end %>
-					</div>
-				</div>
-			</div>
-		<% end %>
+		<div id="flash_holder"><%= render 'shared/flash_messages' %></div>
 
 		<div class="narrow">
 			<section id="content"><%= yield %></section>

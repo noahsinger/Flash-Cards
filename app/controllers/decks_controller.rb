@@ -32,7 +32,7 @@ class DecksController < ApplicationController
   
   def test_flash
     @decks = current_user.decks.all
-    flash[:alert] = "This is a test alert thingy of the thing that is here right now being shown on the thing."
+    flash.now.alert = "This is a test alert thingy of the thing."
     render 'index'
   end
   

@@ -1,3 +1,6 @@
 $("#flash_holder").html( "<%= j render( "shared/flash_messages" ) %>" );
 $(".flash_msg").slideDown( "slow" )
-$("#card_<%= @card.id %>").remove( );
+$("#card_<%= @card.id %>").fadeOut( "slow", function( ) {
+	$("#card_<%= @card.id %>").remove( );
+	$("#card_count").html( "<%= @deck.cards.count %>" );
+});

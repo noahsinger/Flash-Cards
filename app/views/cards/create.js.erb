@@ -4,6 +4,8 @@ $(".flash_msg").slideDown( "slow" )
 <% unless @card.errors.size > 0 %>
 	$("#card_content").val( "" );
 	$("#new_cards").prepend( "<%= j render( @card ) %>" );
+	$("#card_<%= @card.id %>").css( "display", "none" )
+	$("#card_<%= @card.id %>").fadeIn( );
 <% end %>
 
 

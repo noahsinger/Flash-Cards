@@ -6,7 +6,7 @@ class CardsController < ApplicationController
   
   def authorize
     unless current_user == @deck.user
-      redirect_to root_url, notice: "You are not authorized to access that"
+      redirect_to root_url, alert: "You are not authorized to access that"
     end
   end
   

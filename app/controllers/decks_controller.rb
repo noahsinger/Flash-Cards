@@ -8,7 +8,7 @@ class DecksController < ApplicationController
     @deck = Deck.find( params[:deck_id] ) if params[:deck_id]
     
     unless current_user == @deck.user
-      redirect_to root_url, notice: "You are not authorized to access that"
+      redirect_to root_url, alert: "You are not authorized to access that"
     end
   end
   

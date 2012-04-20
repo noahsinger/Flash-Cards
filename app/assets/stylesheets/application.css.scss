@@ -71,6 +71,41 @@ footer#main {
 	}
 }
 
+div.flash_msg {
+//	position: absolute;
+	z-index: 9;
+	width: 100%;
+	padding: 10px 0;
+//	height: 20px;
+	display: none;
+	color: #fff;
+	border-bottom: 1px solid #ddd;
+	
+	img {
+		float: left;
+		position: relative;
+		left: -80px;
+		top: -25px;
+	}
+	
+	.narrow {
+		.content {
+			width: 60%;
+		}
+	}
+	
+	&#notice {
+		background-color: #eee;
+		color: #060;
+	}
+	
+	&#alert {
+		background-color: #eee;
+		color: #900;
+	}
+}
+
+
 // ------------------------
 // page header
 //
@@ -287,10 +322,14 @@ form {
 //
 
 section#control_panel {
+	z-index: 10;
+	width: 25%;
 	float: right;
 	text-align: center;
-	position: relative;
-	top: -70px;
+	position: absolute;
+	right: 12.5%;
+	top: 20px;
+//	top: -70px;
 	
 	nav#session_links {
 		margin-bottom: 20px;

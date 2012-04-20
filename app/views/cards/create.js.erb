@@ -1,8 +1,8 @@
 <% if @card.errors.any? %>
-	$("#notice").html( "<%= @card.errors.full_messages.join(', ') %>" );
+	// $("#alert").html( "<%= @card.errors.full_messages.join(', ') %>" );
 <% else %>
-	$("#notice").html( "The \"<%= @card.content %>\" card was added" );
+	// $("#notice").html( "The \"<%= @card.content %>\" card was added" );
 	$("#card_content").val( "" );
-	$("#new_cards").prepend( "<li><%= j render( @card ) %></li>" );
+	$("#new_cards").prepend( "<%= j render( @card ) %>" );
 	$('.rest-in-place').restInPlace( );
 <% end %>

@@ -35,6 +35,13 @@ class DecksController < ApplicationController
     flash[:alert] = "This is a test alert thingy of the thing that is here right now being shown on the thing."
     render 'index'
   end
+  
+  def show
+    @deck = Deck.find params[:id]
+    respond_to do |format|
+      format.json {render json: @deck}
+    end
+  end
 
   # GET /decks/new
   # GET /decks/new.json

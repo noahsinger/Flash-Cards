@@ -4,4 +4,5 @@
 	$("#notice").html( "The \"<%= @card.content %>\" card was added" );
 	$("#card_content").val( "" );
 	$("#new_cards").prepend( "<li><%= j render( @card ) %></li>" );
+	$('.rest-in-place').restInPlace( );
 <% end %>

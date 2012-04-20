@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'acts_as_list', '~> 0.1.5'
+gem 'rest_in_place'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

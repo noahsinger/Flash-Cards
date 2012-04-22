@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation
   
-  validates :email, :presence => true, :uniqueness => true, :format => {:with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i}
-  validates :password, :presence => :true, :on => :create
+  validates :email, presence: {message: "cannot be blank"}, :uniqueness => true, :format => {:with => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i}
+  validates :password, presence: {message: "cannot be blank"}, :on => :create
   
   after_create :build_reg_hash
   

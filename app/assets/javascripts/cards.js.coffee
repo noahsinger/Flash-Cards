@@ -1,11 +1,13 @@
 
 document.scale_card_content = ->
+  # hide cards until resized
   $(".cards li .content, .big_card .content").each ->
     $(this).css( "visibility", "hidden" )
 
   font = new Font( )
   font.onload = -> 
     $(".cards li .content, .big_card .content").each ->
+      # resize card content
       max_width = $(this).parent( ).width( )
       text_width = textWidth( $(this), font )
 
@@ -21,19 +23,19 @@ document.scale_card_content = ->
   font.src = font.fontFamily
 
 # slow and accurate		
-# textWidth = (element, font) ->
-#   size = element.css("font-size")
-#   width = font.measureText(element.text( ), parseInt(size)).width
-#   width
+textWidth = (element, font) ->
+  size = element.css("font-size")
+  width = font.measureText(element.text( ), parseInt(size)-8).width
+  width
 
 # fast but inaccurate
-textWidth = (element, font) -> 
-  text = element.text( )													#get the text
-  wrapped = '<span>' + text + '</span>'						#wrap the text
-  element.html( wrapped )													#put the wrapped text into the element
-  width = element.find( 'span:first' ).width( )		#find the width of the wrapped text
-  element.html( text )														#put the original text back
-  width
+# textWidth = (element, font) -> 
+#   content = element.html( )													#get the text
+#   wrapped = '<span>' + content + '</span>'						#wrap the text
+#   element.html( wrapped )													#put the wrapped text into the element
+#   width = element.find( 'span:first' ).width( )		#find the width of the wrapped text
+#   element.html( content )														#put the original text back
+#   width
 
 
 scaleDown = (element, max_width, font) ->

@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
+	document.search_for_email( )
+	
+document.search_for_email = ->
 	$("#email").keyup ->
 		email = $("#email").val( )
 		

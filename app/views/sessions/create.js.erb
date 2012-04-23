@@ -1,0 +1,6 @@
+<% if @status == "registered" %>
+	document.location = "/decks"
+<% elsif @status == "unregistered" or @status == "notfound" %>
+	$("#flash_holder").html( "<%= j render( "shared/flash_messages" ) %>" );
+	$(".flash_msg").slideDown( "slow" )
+<% end %>

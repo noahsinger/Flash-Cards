@@ -76,10 +76,10 @@ div.flash_msg {
 	z-index: 9;
 	width: 100%;
 	padding: 10px 0;
-//	height: 20px;
 	display: none;
 	color: #fff;
 	border-bottom: 1px solid #ddd;
+	background-color: #eee;
 	
 	img {
 		float: left;
@@ -91,16 +91,15 @@ div.flash_msg {
 	.narrow {
 		.content {
 			width: 60%;
+			font-weight: bold;
 		}
 	}
 	
 	&#notice {
-		background-color: #eee;
 		color: #060;
 	}
 	
 	&#alert {
-		background-color: #eee;
 		color: #900;
 	}
 }

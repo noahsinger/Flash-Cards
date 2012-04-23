@@ -23,7 +23,7 @@ class SessionsControllerTest < ActionController::TestCase
     post :create, email: "test@test.com", password: "badsecret"
     
     assert_equal nil, session[:user_id]
-    assert_redirected_to new_session_path
+    assert_redirected_to root_path
   end
   
   test "should not create new session if not registered" do
@@ -33,7 +33,7 @@ class SessionsControllerTest < ActionController::TestCase
     
     post :create, email: "test@test.com", password: "secret"
     
-    assert_redirected_to new_session_path
+    assert_redirected_to root_path
   end
   
   test "should not send new email if one was just sent" do

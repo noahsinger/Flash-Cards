@@ -35,6 +35,8 @@
 						<%= yield :ribbon_links %>
 						<li class="about_us"><%= link_to 'About', '' %></li>
 						<li class="contact_us"><%= link_to 'Contact', '' %></li>
+						<li class="home_link"><%= link_to 'LittleWhiteCards.com', root_path %></li>
+						<li class="copyright">Copyright &copy; 2012 - <%= Time.zone.now.year %></li>
 						<li id="end"></li>
 					</ul>
 				</nav>
@@ -43,8 +45,8 @@
 			
 		<footer id="main">
 			<div class="narrow">
-				Copyright &copy; 2012 - <%= Time.zone.now.year %>
-				<%= link_to 'LittleWhiteCards.com', root_path %>
+				<span class="copyright">Copyright &copy; 2012 - <%= Time.zone.now.year %></span>
+				<%= link_to 'LittleWhiteCards.com', root_path, class: 'home_link' %>
 				<%= link_to 'About', '', class: 'about_us' %>
 				<%= link_to 'Contact', '', class: 'contact_us' %>
 			</div>

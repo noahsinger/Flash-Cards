@@ -157,7 +157,7 @@ ol.decks, ol.cards {
 	
 	li {
 		background-color: #fff;
-		margin: 20px 20px 20px 0;
+		margin: 20px 40px 20px 0;
 		padding: 20px;
 		float: left;
 		width: $card_size;
@@ -372,6 +372,7 @@ section#control_panel {
 			width: 72%;
 		
 			li {
+				@include debug_border;
 				background-color: #990000;
 				padding: 20px 20px 10px 20px;
 			
@@ -395,15 +396,19 @@ section#control_panel {
 					}
 				}
 				
-				&.about_us, &.contact_us {
+				&.about_us, &.contact_us, &.home_link, &.copyright {
 					display: none;
+				}
+				
+				&.copyright {
+					color: #999;
 				}
 
 				&#end {
 					background-color: transparent;
 					background-image: url(ribbon_end.png);
 					background-repeat: no-repeat;
-					min-height: 160px;
+					min-height: 140px;
 					background-size: 100%;
 				}
 			}

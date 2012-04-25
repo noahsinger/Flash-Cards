@@ -56,7 +56,7 @@ scaleDown = (element, max_width, font) ->
 		current_text_width = textWidth( element, font )
 
 	console.log "\tstarting font size #{starting_font_size} changed to #{element.css("font-size")}"
-
+		
 
 $(document).ready ->
 	document.scale_card_content( )

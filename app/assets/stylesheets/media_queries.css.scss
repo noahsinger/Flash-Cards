@@ -1,0 +1,151 @@
+@media all and (max-width: 880px) {
+	// ------------------------
+	// page header
+	//
+
+	header#main {
+		text-align: center;	
+	}
+	
+		
+	// ------------------------
+	// layout containers
+	//
+
+	.narrow {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#content {
+		width: 100%;
+		float: none;
+	}
+	
+	// --------------------------
+	// cards and decks
+	//
+	
+	ol.decks, ol.cards {
+		text-align: center;
+		
+		li {
+			float: none;
+			display: inline-block;
+			margin: 20px;
+		}
+	}
+	
+	
+	// ------------------------
+	// big cards
+	//
+
+	#big_card {
+		text-align: center;
+		
+		.big_card {
+			float: none;
+			display: inline-block;
+		}
+		
+		// ------------------------
+		// arrow link styles (cards show)
+		//
+
+		.arrow_links {
+			float: none;
+			position: relative;
+			top: -140px;
+			display: inline-block;
+		}
+	}
+	
+	
+	// ------------------------
+	// reorder cards table
+	//
+
+	#cards_table {
+		text-align: center;
+		
+		table.cards {
+			width: 50%;
+			margin: 0 auto;
+		}
+	}
+	
+	
+	// ------------------------
+	// form styles
+	//
+
+	form {
+		text-align: center;
+		
+		input {
+			text-align: center;
+		}
+	}
+	
+	// ------------------------
+	// flash messages
+	//
+	
+	div.flash_msg {
+		text-align: center;
+		
+		.narrow {
+			.content {
+				width: 90%;
+				margin: 0 auto;
+			}
+		}
+	}
+	
+  // ------------------------
+	// control panel with ribbon
+	//
+
+	section#control_panel {
+		position: static;
+		float: none;
+		margin: 20px auto;
+		top: 0px;
+		width: 60%;
+
+		nav#session_links {
+			margin-bottom: 10px;
+
+			a {
+				color: #444;
+			}
+		}
+
+		h1 {
+			font-family: 'BloklettersBalpen', helvetica;
+			margin: 0;
+			padding: 0;
+			color: #000;
+		}
+
+		nav#ribbon {	
+			border-top: 1px solid #000;
+			background-image: -moz-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+			background-image: -webkit-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+			background-image: -o-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+			background-image: -ms-radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+			background-image: radial-gradient(50% 0%, ellipse cover, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.0) 100%);
+
+			ul {
+
+				li {
+
+					a {
+						color: #fff;
+					}
+				}
+			}
+		}
+	} //end control_panel
+}

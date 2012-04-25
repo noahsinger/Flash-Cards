@@ -19,7 +19,6 @@ body {
 }
 
 
-
 // ------------------------
 // general styles
 //
@@ -45,6 +44,7 @@ a {
 	@include debug_border;
 	width: 66%;
 	float: left;
+	@include clearfix;
 }
 
 #control_panel {
@@ -70,6 +70,11 @@ footer#main {
 		padding-left: 20px;
 	}
 }
+
+
+// ---------------------
+// flash messages
+//
 
 div.flash_msg {
 //	position: absolute;
@@ -222,6 +227,11 @@ ol.cards {
 		}
 	}
 }
+
+
+// ------------------------
+// reorder cards table
+//
 
 table.cards {
 	margin-top: 20px;

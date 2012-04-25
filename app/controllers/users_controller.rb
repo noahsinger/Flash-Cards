@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   def admin_only
     unless current_user.role == "admin"
-      redirect_to root_url, notice: "You are not authorized to access that"
+      redirect_to decks_url, alert: "You are not authorized to access that"
     end
   end
   

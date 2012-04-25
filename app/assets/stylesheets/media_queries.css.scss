@@ -1,4 +1,4 @@
-@media all and (max-width: 880px) {
+@media all and (max-width: 975px) {
 	// ------------------------
 	// page header
 	//
@@ -151,7 +151,37 @@
 }
 
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 630px) {
+	#home_index {
+		#content {
+			width: 90%;
+		}
+		
+		// ------------------------
+		// control panel with ribbon
+		//
+
+		section#control_panel {
+			width: 90%;
+		}
+	}
+}
+
+@media all and (max-width: 550px) {
+	#home_index {
+		#content {
+			width: 90%;
+		}
+		
+		// ------------------------
+		// control panel with ribbon
+		//
+
+		section#control_panel {
+			width: 90%;
+		}
+	}
+	
 	footer#main {
 		text-align: center;
 		
@@ -164,6 +194,34 @@
 		}
 	}
 	
+	
+	// ------------------------
+	// big cards
+	//
+
+	#big_card {
+		.big_card {
+			width: 200px;
+			height: 200px;
+			font-size: 3em;
+			
+			.content {
+				line-height: 25px;
+				width: 200px;
+				height: 200px;
+			}
+		}
+		
+		// ------------------------
+		// arrow link styles (cards show)
+		//
+
+		.arrow_links {
+			top: -110px;
+		}
+	}
+	
+	
 	// ------------------------
 	// control panel with ribbon
 	//
@@ -171,6 +229,64 @@
 	section#control_panel {
 		h1 {
 			font-size: 1.4em;
+		}
+	}	
+}
+
+
+@media all and (max-width: 460px) {
+	// ------------------------
+	// big cards
+	//
+
+	#big_card {
+		.big_card {
+			width: 150px;
+			height: 150px;
+			font-size: 2em;
+			
+			.content {
+				line-height: 25px;
+				width: 150px;
+				height: 150px;
+			}
+		}
+		
+		// ------------------------
+		// arrow link styles (cards show)
+		//
+
+		.arrow_links {
+			top: -80px;
+		}
+	}	
+}
+
+
+@media all and (max-width: 400px) {
+	// ------------------------
+	// big cards
+	//
+
+	#big_card {
+		.big_card {
+			width: 100px;
+			height: 100px;
+			font-size: 1.5em;
+			
+			.content {
+				line-height: 25px;
+				width: 100px;
+				height: 100px;
+			}
+		}
+		
+		// ------------------------
+		// arrow link styles (cards show)
+		//
+
+		.arrow_links {
+			top: -60px;
 		}
 	}	
 }

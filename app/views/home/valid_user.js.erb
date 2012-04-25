@@ -1,13 +1,20 @@
+hide_spinner = function( ) {
+	$("#spinner").animate( {opacity: 0}, 250 );
+	$("#spinner").css( "display", "none" )
+}
+
 <% if @user %>
 
-	console.log( "user valid" );
+	// console.log( "user valid" );
+	hide_spinner( );
 	$("#additional_fields").html("<%= j( render( 'login' ) ) %>");
 	$("#home_form").attr( "action", "<%= sessions_path %>" );
 	
 <% else %>
 
+	// console.log( "user invalid" );
+	hide_spinner( );
 	<% @user = User.new %>
-	console.log( "user invalid" );
 	$("#additional_fields").html("<%= j( render( 'user_registration' ) ) %>");
 	$("#home_form").attr( "action", "<%= registration_index_path %>" );
 

@@ -10,6 +10,7 @@ document.search_for_email = ->
 		email = $("#email").val( )
 		
 		if email.match /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+			show_spinner( )
 			$.get '/home/valid_user',
 				"email=" + email
 				(data) -> 
@@ -17,8 +18,11 @@ document.search_for_email = ->
 				"script"
 		false		
 		
-		
-		
+show_spinner = ->
+		$("#spinner").css("opacity", 0)
+		$("#spinner").css("display","inline-block")
+		$("#spinner").animate({opacity: 1}, 250)
+
 		
 		
 		

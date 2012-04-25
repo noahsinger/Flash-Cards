@@ -63,6 +63,10 @@
 		label[for=password], label[for=password_confirmation] {
 			display: block;
 		}
+		
+		#additional_fields {
+			min-height: 45px;
+		}
 	}
 	
 	

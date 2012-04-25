@@ -4,11 +4,6 @@
 
 <div>
 	<%= form_tag :users, id: 'home_form', remote: true do %>
-		<p>
-			<%= label_tag :email %>
-			<%= text_field_tag :email, '', placeholder: "Email" %>
-		</p>
-		
 		<div id="spinner">
 			<div class="spinner">
 			  <div class="bar1"></div>
@@ -25,6 +20,11 @@
 			  <div class="bar12"></div>
 			</div>
 		</div>
+	
+		<p>
+			<%= label_tag :email %>
+			<%= text_field_tag :email, '', placeholder: "Email" %>
+		</p>
 		
 		<div id="additional_fields"></div>
 	<% end %>

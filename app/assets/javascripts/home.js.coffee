@@ -19,8 +19,9 @@ document.search_for_email = ->
 		false		
 		
 show_spinner = ->
+	if $("#spinner").css("visibility") == "hidden"
 		$("#spinner").css("opacity", 0)
-		$("#spinner").css("display","inline-block")
+		$("#spinner").css("visibility","visible")
 		$("#spinner").animate({opacity: 1}, 250)
 
 		

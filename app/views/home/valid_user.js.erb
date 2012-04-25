@@ -1,6 +1,10 @@
 hide_spinner = function( ) {
-	$("#spinner").animate( {opacity: 0}, 250 );
-	$("#spinner").css( "display", "none" )
+	if( $("#spinner").css("visibility") == "visible" ) {
+		$("#additional_fields").css( "opacity", 0 );
+		$("#spinner").animate( {opacity: 0}, 250, function( ) {
+			$("#spinner").css( "visibility", "hidden" );
+		});
+	}
 }
 
 <% if @user %>
@@ -19,3 +23,5 @@ hide_spinner = function( ) {
 	$("#home_form").attr( "action", "<%= registration_index_path %>" );
 
 <% end %>
+
+$("#additional_fields").animate( {opacity: 1}, 250 );

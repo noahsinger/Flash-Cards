@@ -3,7 +3,7 @@
 div#spinner {
 	background-color: #900;
 	display: inline-block;
-	display: none;
+	visibility: hidden;
 	padding: 6px;
 	@include border-radius( 5px );
 	border: 1px solid #700;

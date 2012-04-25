@@ -149,3 +149,28 @@
 		}
 	} //end control_panel
 }
+
+
+@media all and (max-width: 500px) {
+	footer#main {
+		text-align: center;
+		
+		.narrow {}
+
+		.about_us, .contact_us {
+			float: none;
+			display: block;
+			padding: 20px 0 0 0;
+		}
+	}
+	
+	// ------------------------
+	// control panel with ribbon
+	//
+
+	section#control_panel {
+		h1 {
+			font-size: 1.4em;
+		}
+	}	
+}

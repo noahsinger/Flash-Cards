@@ -16,7 +16,7 @@ class UsersControllerTest < ActionController::TestCase
     logout( )
     login( users(:one) )
     get :index
-    assert_redirected_to root_path
+    assert_redirected_to decks_path
   end
 
   test "should get new" do

@@ -32,21 +32,6 @@ textWidth = (element, font) ->
   width
 
 
-# fast but inaccurate, breaks rest_in_place
-# textWidth = (element, font) -> 
-#   console.log "---------finding width------------"
-#   content = element.html( )												# get the text
-#   console.log "content is #{content.replace( /[\n\t]/g, "")}"
-#   wrapped = '<span>' + content + '</span>'				# wrap the text
-#   console.log "wrapped is #{wrapped.replace( /[\n\t]/g, "")}"
-#   element.html( wrapped )													# put the wrapped text into the element
-#   width = element.find( 'span:first' ).width( )		# find the width of the wrapped text
-#   console.log "width is #{width}"
-#   element.html( content )													# put the original text back
-#   console.log "----------------------------------"
-#   width
-
-
 scaleDown = (element, max_width, font) ->
 	starting_font_size = element.css("font-size")
 
@@ -56,11 +41,21 @@ scaleDown = (element, max_width, font) ->
 		current_text_width = textWidth( element, font )
 
 	console.log "\tstarting font size #{starting_font_size} changed to #{element.css("font-size")}"
+
+
+remove_left_margin_from_leading_cards = ->
+	previous_top = 0
+	$(".cards li, .decks li").each ->
+		console.log "top: #{$(this).offset( ).top}"
+		if $(this).offset( ).top != previous_top
+			$(this).css( "margin-left", 0 );
+		
+		previous_top = $(this).offset( ).top
 		
 
 $(document).ready ->
 	document.scale_card_content( )
-			
+	remove_left_margin_from_leading_cards( )		
 	
 	
 	

@@ -43,19 +43,8 @@ scaleDown = (element, max_width, font) ->
 	console.log "\tstarting font size #{starting_font_size} changed to #{element.css("font-size")}"
 
 
-remove_left_margin_from_leading_cards = ->
-	previous_top = 0
-	$(".cards li, .decks li").each ->
-		console.log "top: #{$(this).offset( ).top}"
-		if $(this).offset( ).top != previous_top
-			$(this).css( "margin-left", 0 );
-		
-		previous_top = $(this).offset( ).top
-		
-
 $(document).ready ->
 	document.scale_card_content( )
-	remove_left_margin_from_leading_cards( )		
 	
 	
 	

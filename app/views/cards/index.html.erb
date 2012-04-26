@@ -13,6 +13,9 @@
 			</span>
 		</h2>
 	</li>
+	<% if @deck.cards.count > 0 %>
+		<li><%= link_to 'Play this Deck', deck_card_path(@deck, @deck.cards.first) %></li>
+	<% end %>
 	<li><%= link_to 'Add a New Card', new_deck_card_path(@deck) %></li>
 	<li><%= link_to 'Reorder Deck', deck_reorder_path(@deck) %></li>
 	<li class="destroy"><%= link_to 'Destroy this Deck', deck_path(@deck), method: :delete, confirm: "Are you sure? This cannot be undone." %></li>

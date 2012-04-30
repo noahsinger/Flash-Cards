@@ -16,9 +16,9 @@ class SessionsController < ApplicationController
             UserMailer.registration( @user ).deliver
           end
         
-          format.html {redirect_to root_url, :alert => "You must verify your email account before you can login"}
-          @status = "unregistered"
           flash.now.alert = "You must verify your email account before logging in"
+          format.html {redirect_to root_url}
+          @status = "unregistered"
           format.js
         end
       else

@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   after_create :build_reg_hash
   
   def build_reg_hash
-    self.reg_hash = Digest::SHA256.hexdigest( self.email + self.id.to_s )
-    self.save
+    update_attribute( :reg_hash, Digest::SHA256.hexdigest( self.email + self.id.to_s ) )
+    # self.reg_hash = Digest::SHA256.hexdigest( self.email + self.id.to_s )
+    # self.save
   end
 end

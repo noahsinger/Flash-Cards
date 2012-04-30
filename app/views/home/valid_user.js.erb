@@ -25,3 +25,7 @@ hide_spinner = function( ) {
 <% end %>
 
 $("#additional_fields").animate( {opacity: 1}, 250 );
+$("#home_form").submit( function( ) {
+	document.show_spinner( );
+	return true;
+});

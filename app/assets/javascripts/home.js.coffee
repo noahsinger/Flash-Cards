@@ -13,7 +13,7 @@ document.search_for_email = ->
 		# console.log( "result: #{event.which} is ignored, #{event.which in ignore_keys}" )
 		if email.match /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 			unless event.which in ignore_keys
-				show_spinner( )
+				document.show_spinner( )
 				$.get '/home/valid_user',
 					"email=" + email
 					(data) -> 
@@ -21,18 +21,8 @@ document.search_for_email = ->
 					"script"
 				false		
 		
-show_spinner = ->
+document.show_spinner = ->
 	if $("#spinner").css("visibility") == "hidden"
 		$("#spinner").css("opacity", 0)
 		$("#spinner").css("visibility","visible")
 		$("#spinner").animate({opacity: 1}, 250)
-
-		
-		
-		
-		
-		
-		
-		
-		
-		

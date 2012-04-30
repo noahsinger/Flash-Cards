@@ -20,11 +20,17 @@ class RegistrationController < ApplicationController
     respond_to do |format|
       if @user.save
       	UserMailer.registration( @user ).deliver
-        format.html { redirect_to root_url, notice: 'Check your Email!  We just sent you a link to verify your email address.' }
+      	flash.now.notice = 'Check your Email!  We just sent you a link to verify your email address.'
+        format.html { redirect_to root_url }
         format.json { render json: @user, status: :created, location: @user }
+        logger.info "***************Rendering create after save*******************"
+        format.js
       else
+        flash.now.alert = @user.errors.full_messages.delete_if {|msg| msg.index(/digest/)}.join( ', ' )
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        logger.info "***************Rendering create after fail*******************"
+        format.js
       end
     end
   end

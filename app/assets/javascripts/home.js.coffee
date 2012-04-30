@@ -10,7 +10,7 @@ document.search_for_email = ->
 	
 	$("#email").keyup (event) ->
 		email = $("#email").val( )
-		# console.log( "result: #{event.which} is ignored, #{event.which in ignore_keys}" )
+		# console.log "result: #{event.which} is ignored, #{event.which in ignore_keys}"
 		if email.match /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 			unless event.which in ignore_keys
 				document.show_spinner( )
@@ -19,10 +19,30 @@ document.search_for_email = ->
 					(data) -> 
 				 		# alert( data )
 					"script"
-				false		
+				false
+		else
+			console.log "invalid email, additional fields current opacity: #{$("#additional_fields").css( "opacity" )}"
+			console.log "hidding additional fields"
+			document.hide_additional_fields( )
 		
 document.show_spinner = ->
 	if $("#spinner").css("visibility") == "hidden"
 		$("#spinner").css("opacity", 0)
 		$("#spinner").css("visibility","visible")
 		$("#spinner").animate({opacity: 1}, 250)
+		
+document.hide_spinner = ->
+	if $("#spinner").css("visibility") == "visible"
+		$("#spinner").animate {opacity: 0}, 250, ->
+			$("#spinner").css( "visibility", "hidden" )
+			
+document.show_additional_fields = ->
+	if $("#additional_fields").css("visibility") == "hidden"
+		$("#additional_fields").css("opacity", 0)
+		$("#additional_fields").css("visibility","visible")
+		$("#additional_fields").animate({opacity: 1}, 250)
+		
+document.hide_additional_fields = ->
+	if $("#additional_fields").css("visibility") == "visible"
+		$("#additional_fields").animate {opacity: 0}, 250, ->
+			$("#additional_fields").css( "visibility", "hidden" )

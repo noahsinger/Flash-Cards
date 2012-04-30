@@ -1,10 +1,10 @@
 $("#flash_holder").html( "<%= j render( "shared/flash_messages" ) %>" );
 $(".flash_msg").slideDown( "slow" )
 
-hide_spinner( );
+document.hide_spinner( );
 
 <% if @user.errors.count == 0 %>
 	$("#additional_fields").html("<%= j( render( 'home/login' ) ) %>");
 	$("#home_form").attr( "action", "<%= sessions_path %>" );
-	$("#additional_fields").animate( {opacity: 1}, 250 );
+	document.show_additional_fields( );
 <% end %>

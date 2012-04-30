@@ -1,30 +1,23 @@
-hide_spinner = function( ) {
-	if( $("#spinner").css("visibility") == "visible" ) {
-		$("#additional_fields").css( "opacity", 0 );
-		$("#spinner").animate( {opacity: 0}, 250, function( ) {
-			$("#spinner").css( "visibility", "hidden" );
-		});
-	}
-}
 
 <% if @user %>
 
 	// console.log( "user valid" );
-	hide_spinner( );
+	document.hide_spinner( );
 	$("#additional_fields").html("<%= j( render( 'login' ) ) %>");
 	$("#home_form").attr( "action", "<%= sessions_path %>" );
 	
 <% else %>
 
 	// console.log( "user invalid" );
-	hide_spinner( );
+	document.hide_spinner( );
 	<% @user = User.new %>
 	$("#additional_fields").html("<%= j( render( 'user_registration' ) ) %>");
 	$("#home_form").attr( "action", "<%= registration_index_path %>" );
 
 <% end %>
 
-$("#additional_fields").animate( {opacity: 1}, 250 );
+document.show_additional_fields( );
+
 $("#home_form").submit( function( ) {
 	document.show_spinner( );
 	return true;

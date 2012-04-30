@@ -1,7 +1,7 @@
 <% if @status == "registered" %>
 	document.location = "/decks"
 <% elsif @status == "unregistered" or @status == "notfound" %>
-	hide_spinner( );
+	document.hide_spinner( );
 	$("#flash_holder").html( "<%= j render( "shared/flash_messages" ) %>" );
 	$(".flash_msg").slideDown( "slow" )
 <% end %>

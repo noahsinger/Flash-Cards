@@ -12,4 +12,12 @@ class UsersCardsPageTest < ActionDispatch::IntegrationTest
     wait_until { page.has_content? "something" }
     wait_until { page.has_content? "words" }
   end
+  
+  test "users can use the logout link" do
+    visit deck_cards_path(decks(:one))
+    # save_and_open_page
+    
+    wait_until { page.has_content? "Logout" }
+    assert_equal root_path, current_path
+  end
 end

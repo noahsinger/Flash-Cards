@@ -3,7 +3,7 @@ document.scale_card_content = ->
 	# hide cards until resized
 	$(".cards li .content, .big_card .content").each ->
 		$(this).css( "visibility", "hidden" )
-
+	
 	font = new Font( )
 	font.onerror = ->
 		console.log "***************** font error *****************"
@@ -59,6 +59,11 @@ scaleDown = (element, max_width, font) ->
 	# console.log "document ready"
 	# document.scale_card_content( )
 
+$(document).ready ->
+	# hide cards until resized
+	$(".cards li .content, .big_card .content").each ->
+		$(this).css( "visibility", "hidden" )
+		
 $(window).load ->
 	console.log "window loaded"
 	document.scale_card_content( )

@@ -24,6 +24,7 @@ group :development, :test do
 	gem "quiet_assets"
 	gem "capybara"
 	gem "capybara-webkit" #requires qt library (brew install qt)
+	gem 'database_cleaner'
 	
 	gem "guard-minitest", :git => "http://github.com/aspiers/guard-minitest.git"
 	gem "ruby-prof"  #for guard-minitest

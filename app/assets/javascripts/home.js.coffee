@@ -21,8 +21,8 @@ document.search_for_email = ->
 					"script"
 				false
 		else
-			console.log "invalid email, additional fields current opacity: #{$("#additional_fields").css( "opacity" )}"
-			console.log "hidding additional fields"
+			# console.log "invalid email, additional fields current opacity: #{$("#additional_fields").css( "opacity" )}"
+			# console.log "hidding additional fields"
 			document.hide_additional_fields( )
 		
 document.show_spinner = ->

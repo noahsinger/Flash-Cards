@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
+	javascript_check( );
 	document.search_for_email( )
 	
 document.search_for_email = ->
@@ -25,6 +26,10 @@ document.search_for_email = ->
 			# console.log "hidding additional fields"
 			document.hide_additional_fields( )
 		
+javascript_check = ->
+	$("#home_index form").css "display", "block"
+	$("#noscript").css "display", "none"
+
 document.show_spinner = ->
 	if $("#spinner").css("visibility") == "hidden"
 		$("#spinner").css("opacity", 0)

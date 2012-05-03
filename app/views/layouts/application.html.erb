@@ -20,7 +20,14 @@
 		<div id="flash_holder"><%= render 'shared/flash_messages' %></div>
 
 		<div class="narrow">
-			<section id="content"><%= yield %></section>
+			<section id="content">
+				<%= yield %>
+				
+				<noscript id="noscript">
+					<p>This site requires that JavaScript be enabled in your browser.  This is done to provide the best interactive experience to our users.</p>
+					<p>If you need instructions on how to do this please visit <%= link_to 'enable-javascript.com', 'http://enable-javascript.com/', style: 'color: blue;' %>.</p>
+				</noscript>
+			</section>
 
 			<section id="control_panel">
 				<nav id="session_links">

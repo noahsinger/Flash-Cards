@@ -42,10 +42,21 @@
 	
 	
 	// ------------------------
+	// No Javascript Warning
+	//
+	
+	#noscript {
+		display: block;
+		margin: 50px;
+	}
+	
+	
+	// ------------------------
 	// home page login/registration form
 	//
 	
 	form {
+		display: none; //don't show the form unless javascript is there to enable it
 		border: 1px solid #444;
 		padding: 1em;
 		background-color: #fff;

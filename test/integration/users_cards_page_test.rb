@@ -15,16 +15,17 @@ class UsersCardsPageTest < ActionDispatch::IntegrationTest
     assert_equal deck_cards_path(decks(:one)), current_path
   end
   
-  test "users can use the logout link" do
+  test "users can add new cards" do
     visit deck_cards_path(decks(:one))
-    # save_and_open_page
-    
-    wait_until { assert page.has_content?( "Logout" ), "Logout link is missing from page"}
-    click_link "Logout"
-    assert_equal root_path, current_path
+    click_link 'Add a New Card'
+    wait_until { assert page.has_selector?( "form input[id=card_content]" ), "Card content field is missing from new card form" }
+    fill_in 'card_content', with: 'New Card 1'
+    click_button '+'
+    wait_until { assert page.has_content?( "New Card 1" ), "New card did not appear on new card page when added" }
   end
   
   teardown do
     Capybara.reset_sessions!    # Forget the (simulated) browser state
+    DatabaseCleaner.clean
   end
 end

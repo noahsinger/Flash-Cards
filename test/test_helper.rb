@@ -8,11 +8,12 @@ class ActiveSupport::TestCase
     include Capybara::DSL
   end
   
+  # clean out and rebuild the database after each test, slow but better for the integration tests
   require 'database_cleaner'
   DatabaseCleaner.strategy = :truncation
   
   Capybara.javascript_driver = :webkit
-  # Capybara.default_wait_time = 150
+  Capybara.default_wait_time = 15
   
   Capybara.current_driver = Capybara.javascript_driver # without this you will not being using javascript
   

@@ -6,6 +6,16 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     wait_until { assert page.has_content?( "Your Decks" ), "\"Your Decks\" header is missing from page" }
   end
   
+  test "users can use the logout link" do
+    capybara_login
+    visit deck_cards_path(decks(:one))
+    # save_and_open_page
+    
+    wait_until { assert page.has_content?( "Logout" ), "Logout link is missing from page"}
+    click_link "Logout"
+    assert_equal root_path, current_path
+  end
+  
   test "user with unknown email is offered registration" do
     visit root_path
     fill_in 'email', with: 'unknown@unknown.com'
@@ -23,5 +33,10 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     click_button 'Login'
     # save_and_open_page
     assert_equal root_path, current_path
+  end
+  
+  teardown do
+    Capybara.reset_sessions!    # Forget the (simulated) browser state
+    DatabaseCleaner.clean
   end
 end

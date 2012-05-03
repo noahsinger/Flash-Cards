@@ -26,4 +26,9 @@ class RegistrationTest < ActionDispatch::IntegrationTest
     # save_and_open_page
     assert_equal root_path, current_path
   end
+  
+  teardown do
+    Capybara.reset_sessions!    # Forget the (simulated) browser state
+    DatabaseCleaner.clean
+  end
 end

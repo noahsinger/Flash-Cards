@@ -118,10 +118,11 @@ div.flash_msg {
 header#main {
 	background-color: #000;
 	background-image: url(dark_dotted.png);
-	padding: 20px 0;
+	padding: 15px 0;
 	
 	h1 {
 		color: #fff;
+		line-height: 30px;
 	}	
 }
 
@@ -291,7 +292,7 @@ span.prev {
 form {
 	margin: 20px 0;
 	
-	input[type=text], input[type=password] {
+	input[type=text], input[type=email], input[type=password] {
 		font-size: 1.5em;
 		padding: 5px 10px;
 
@@ -363,6 +364,10 @@ section#control_panel {
 		color: #fff;
 	}
 	
+	h2 {
+		line-height: 25px;
+	}
+	
 	nav#ribbon {	
 		margin-top: 5px;
 		border-top: 1px solid #aaa;
@@ -376,10 +381,11 @@ section#control_panel {
 		
 			li {
 				@include debug_border;
-				background-color: #990000;
+				background-color: #900;
 				padding: 20px 20px 10px 20px;
 			
 				a {
+					text-shadow: 0px -1px 0px #000;
 					color: #fff;
 				}
 				
